@@ -4,16 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>You’re on the list — Slatecliff</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260925c" />
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="/"><span class="logo-mark" aria-hidden="true"></span> Slatecliff</a>
+    </div>
+  </header>
   <main class="thanks">
-    <a class="logo" href="/"><span class="logo-mark" aria-hidden="true"></span> Slatecliff</a>
-    <h1>You’re on the founding list.</h1>
-    <p class="lede">We’ll email you when a beta seat opens. If you told us your biggest pain, that goes straight into what we ship first.</p>
-    <a class="nav-cta" href="/">Back to slatecliff.com</a>
+    <p class="mono-label">Founding beta</p>
+    <h1>You’re on the list.</h1>
+    <p>Thanks for requesting a founding seat. We’ll email you when access opens — no card, no spam blasts.</p>
+    <a class="btn btn-dark" href="/">Back to Slatecliff</a>
   </main>
+  <script>document.getElementById("y") && (document.getElementById("y").textContent = new Date().getFullYear());</script>
 </body>
 </html>
