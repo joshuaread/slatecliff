@@ -43,6 +43,7 @@ def page(path, title, desc, body, extra_head='', og_type='website'):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 {PZ_TAG}
+<meta name='impact-site-verification' value='73259207-b5dd-481c-9738-ac3da54c5be4'>
 {extra_head}
 </head>
 <body>
