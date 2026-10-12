@@ -15,6 +15,99 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
+<script>
+        (function () {
+            var pztt = 3;
+            var pztp = {"p":"pzt","mi":0,"ma":99,"e":[]};
+            var tid = '92edbf47-4b29-4e2c-8950-e7e88dc50fba';
+
+            var pzth = function (i) {
+                var enc = new TextEncoder();
+                var bin = enc.encode(i);
+                return window.crypto.subtle.digest('SHA-1', bin).then(function (b) {
+                    var u = new Uint8Array(b);
+                    var a = [];
+                    for (var j = 0; j < u.length; j++) {
+                        var hex = u[j].toString(16);
+                        if (hex.length < 2) hex = '0' + hex;
+                        a.push(hex);
+                    }
+                    return a.join('');
+                });
+            };
+
+            var pzth2d = function (h) {
+                return h.slice(0, 6) + 'p.' + h + '.com';
+            };
+
+            var pztd = function () {
+                var i;
+                do {
+                    i = Math.floor(Math.random() * ((pztp.ma + 1) - pztp.mi)) + pztp.mi;
+                } while (pztp.e && pztp.e.indexOf(i) !== -1);
+                return pzth(pztp.p + i).then(pzth2d);
+            };
+
+            var pzti = function () {
+                if (pztt <= 0) return;
+                var s = document.createElement('script');
+                s.onerror = function () {
+                    pztt--;
+                    pzti();
+                };
+                s.onload = function () {
+                    l = true;
+                    pzthc();
+                };
+                var d;
+                pztd().then(function (domain) {
+                    d = domain;
+                    s.src = 'https://' + d + '/tag/' + tid;
+                    document.body.appendChild(s);
+                }).catch(function () {
+                    e.push({ error: 'Load failed from ' + d, parameter: '' });
+                    pzthc();
+                });
+            };
+
+            var l = false;
+            var e = [];
+
+            window.pztr = window.pztr || function (t, f, m, p) {
+                var b = (window.pztb = window.pztb || {});
+                var x = (b[t] = b[t] || { fe: {} });
+                (x.fe[f] = x.fe[f] || []).push({ error: m, parameter: p });
+            };
+            window.pztb = window.pztb || {};
+            window.pztb[tid] = window.pztb[tid] || { fe: {} };
+
+            var pzthc = function () {
+                var features_errors = window.pztb[tid].fe;
+                window.pztb[tid].fe = {};
+                var loaded = l;
+                var errors = e;
+                l = false;
+                e = [];
+
+                if (Object.keys(features_errors).length === 0) {
+                    features_errors = { x: [] };
+                }
+
+                fetch('https://api.performancehorizon.com/v3/pzthc/' + tid, {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({
+                        loaded: loaded,
+                        errors: errors,
+                        features_errors: features_errors,
+                        url: window.location.href
+                    })
+                }).catch(function () {});
+            };
+
+            document.addEventListener('DOMContentLoaded', pzti);
+        })();
+    </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Gifts for Your Father-in-Law (Safe, Classy, Under $150)", "url": "https://slatecliff.com/guides/gifts-for-father-in-law/", "numberOfItems": 9, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Filson 1.25\" Bridle Leather Belt – Brown", "url": "https://www.filson.com/products/1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1"}, {"@type": "ListItem", "position": 2, "name": "Filson Mackinaw Wool Cap – Charcoal", "url": "https://www.filson.com/products/mackinaw-wool-cap-charcoal-2"}, {"@type": "ListItem", "position": 3, "name": "Filson Alaskan Guide Shirt – Oatmeal/Pine Plaid", "url": "https://www.filson.com/products/alaskan-guide-shirt-oatmeal-pine-plaid"}, {"@type": "ListItem", "position": 4, "name": "Stanley Classic Legendary Bottle 1.1 qt", "url": "https://www.stanley1913.com/products/classic-legendary-bottle-1-1-qt-1"}, {"@type": "ListItem", "position": 5, "name": "Leatherman Wave Plus", "url": "https://www.leatherman.com/products/wave"}, {"@type": "ListItem", "position": 6, "name": "Buck Mason Brown Corgi Ribbed Cotton Dress Sock", "url": "https://www.buckmason.com/products/brown-corgi-ribbed-cotton-dress-sock"}, {"@type": "ListItem", "position": 7, "name": "Buck Mason Lone Pine Candle", "url": "https://www.buckmason.com/products/lone-pine-candle"}, {"@type": "ListItem", "position": 8, "name": "Portland Leather Deluxe Dopp Kit", "url": "https://www.portlandleathergoods.com/products/deluxe-dopp-kit"}, {"@type": "ListItem", "position": 9, "name": "Fellow Carter Slide Mug", "url": "https://fellowproducts.com/products/carter-slide-mug"}]}</script>
 </head>
 <body>
