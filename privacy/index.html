@@ -15,6 +15,99 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
+<script>
+        (function () {
+            var pztt = 3;
+            var pztp = {"p":"pzt","mi":0,"ma":99,"e":[]};
+            var tid = '92edbf47-4b29-4e2c-8950-e7e88dc50fba';
+
+            var pzth = function (i) {
+                var enc = new TextEncoder();
+                var bin = enc.encode(i);
+                return window.crypto.subtle.digest('SHA-1', bin).then(function (b) {
+                    var u = new Uint8Array(b);
+                    var a = [];
+                    for (var j = 0; j < u.length; j++) {
+                        var hex = u[j].toString(16);
+                        if (hex.length < 2) hex = '0' + hex;
+                        a.push(hex);
+                    }
+                    return a.join('');
+                });
+            };
+
+            var pzth2d = function (h) {
+                return h.slice(0, 6) + 'p.' + h + '.com';
+            };
+
+            var pztd = function () {
+                var i;
+                do {
+                    i = Math.floor(Math.random() * ((pztp.ma + 1) - pztp.mi)) + pztp.mi;
+                } while (pztp.e && pztp.e.indexOf(i) !== -1);
+                return pzth(pztp.p + i).then(pzth2d);
+            };
+
+            var pzti = function () {
+                if (pztt <= 0) return;
+                var s = document.createElement('script');
+                s.onerror = function () {
+                    pztt--;
+                    pzti();
+                };
+                s.onload = function () {
+                    l = true;
+                    pzthc();
+                };
+                var d;
+                pztd().then(function (domain) {
+                    d = domain;
+                    s.src = 'https://' + d + '/tag/' + tid;
+                    document.body.appendChild(s);
+                }).catch(function () {
+                    e.push({ error: 'Load failed from ' + d, parameter: '' });
+                    pzthc();
+                });
+            };
+
+            var l = false;
+            var e = [];
+
+            window.pztr = window.pztr || function (t, f, m, p) {
+                var b = (window.pztb = window.pztb || {});
+                var x = (b[t] = b[t] || { fe: {} });
+                (x.fe[f] = x.fe[f] || []).push({ error: m, parameter: p });
+            };
+            window.pztb = window.pztb || {};
+            window.pztb[tid] = window.pztb[tid] || { fe: {} };
+
+            var pzthc = function () {
+                var features_errors = window.pztb[tid].fe;
+                window.pztb[tid].fe = {};
+                var loaded = l;
+                var errors = e;
+                l = false;
+                e = [];
+
+                if (Object.keys(features_errors).length === 0) {
+                    features_errors = { x: [] };
+                }
+
+                fetch('https://api.performancehorizon.com/v3/pzthc/' + tid, {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({
+                        loaded: loaded,
+                        errors: errors,
+                        features_errors: features_errors,
+                        url: window.location.href
+                    })
+                }).catch(function () {});
+            };
+
+            document.addEventListener('DOMContentLoaded', pzti);
+        })();
+    </script>
 
 </head>
 <body>
@@ -26,9 +119,11 @@
 </header>
 <main id="main">
 <section class="ghero"><h1>Privacy</h1></section><article class="prose">
-<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and doesn't run advertising trackers.</p>
+<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and doesn't run analytics.</p>
 <h2>What we collect</h2>
 <p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. We don't currently run analytics or set cookies of our own.</p>
+<h2>Affiliate tracking</h2>
+<p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. Partnerize and the merchants may set cookies or use similar technologies to do this. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>.</p>
 <h2>Newsletter</h2>
 <p>We don't collect newsletter sign-ups on the site yet. If you email us to join, we use your address only to send the newsletter, and you can ask us to remove it at any time.</p>
 <h2>Merchant links</h2>

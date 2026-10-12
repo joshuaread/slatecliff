@@ -10,6 +10,7 @@ P = {p['id']: p for p in D['products']}
 SITE = 'https://slatecliff.com'
 TAG = "Small gifts he'll actually keep."
 CHECKED = D['price_checked']
+PZ_TAG = open(os.path.join(ROOT, '_src', 'partnerize-tag.txt')).read().strip()  # Partnerize Partner Tag, inserted verbatim in every <head>
 e = html.escape
 OCC = [('christmas', 'Christmas'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
 BUD = [('under-30', 'Under $30'), ('under-100', 'Under $100'), ('under-150', 'Under $150'), ('splurge', 'Worth the splurge')]
@@ -41,6 +42,7 @@ def page(path, title, desc, body, extra_head='', og_type='website'):
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
+{PZ_TAG}
 {extra_head}
 </head>
 <body>
@@ -191,9 +193,11 @@ simple('/affiliate-disclosure/', 'Affiliate Disclosure', 'How SlateCliff makes m
 <li>Prices on our pages were checked on the date shown ({CHECKED}) and may have changed since then.</li></ul>
 <p>Questions? Email <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
 simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collect (very little) and how links to merchants work.', 'Privacy', f'''
-<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and doesn't run advertising trackers.</p>
+<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and doesn't run analytics.</p>
 <h2>What we collect</h2>
 <p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. We don't currently run analytics or set cookies of our own.</p>
+<h2>Affiliate tracking</h2>
+<p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. Partnerize and the merchants may set cookies or use similar technologies to do this. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>.</p>
 <h2>Newsletter</h2>
 <p>We don't collect newsletter sign-ups on the site yet. If you email us to join, we use your address only to send the newsletter, and you can ask us to remove it at any time.</p>
 <h2>Merchant links</h2>
