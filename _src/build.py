@@ -23,7 +23,7 @@ def link(p): return p.get('affiliate_url') or p['url']
 
 def page(path, title, desc, body, extra_head='', og_type='website'):
     url = SITE + path
-    nav = ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in [('/guides/#occasion', 'Occasion'), ('/guides/#budget', 'Budget'), ('/guides/#guy', 'By Guy'), ('/guides/', 'All Guides'), ('/about/', 'About')])
+    nav = ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in [('/guides/#occasion', 'Occasion'), ('/guides/#budget', 'Budget'), ('/guides/#guy', 'By Guy'), ('/guides/', 'All Guides')])
     return f'''<!doctype html>
 <html lang="en">
 <head>
