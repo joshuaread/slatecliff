@@ -96,6 +96,50 @@ def write(path, s):
 G = D['guides']; BY = {g['slug']: g for g in G}
 DISC = f'<p class="ftc"><strong>Disclosure:</strong> SlateCliff may earn a commission if you buy through links on this page, at no extra cost to you. <a href="/affiliate-disclosure/">Learn more</a>.</p>'
 
+# "Best X" playbook layout (used when a guide has a "best" block)
+def best_body(g):
+    b = g['best']; ps = [P[i] for i in b['order']]; top = ps[0]
+    crit = ''.join(f'<li><strong>{e(k)}:</strong> {e(v)}</li>' for k, v in b['criteria'])
+    items = ''
+    for n, p in enumerate(ps, 1):
+        items += f'''<li class="pick" id="{e(p['id'])}">
+  {tile(p)}
+  <div class="pbody">
+    <p class="eyebrow">{e(p['merchant'])}</p>
+    <h3>{n}. {e(p['name'])}, best for {e(b['best_for'][p['id']])}</h3>
+    <p class="price">{money(p['price'])} <span>as of {CHECKED}; prices may change</span></p>
+    <p>{e(p['why'])}</p>
+    <p><strong>Best suited for:</strong> {e(b['best_for'][p['id']][0].upper() + b['best_for'][p['id']][1:])}. Tie to the drink: {e(b['table'][p['id']][0].lower())}; used {e(b['table'][p['id']][1].lower())}.</p>
+    <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
+  </div>
+</li>'''
+    rows = ''.join(f'<tr><td>{n}</td><td><a href="#{e(p["id"])}">{e(p["name"])}</a></td><td>{money(p["price"])}</td>' + ''.join(f'<td>{e(c)}</td>' for c in b['table'][p['id']]) + '</tr>' for n, p in enumerate(ps, 1))
+    uc = ''.join('<tr>' + ''.join(f'<td>{e(c)}</td>' for c in r) + '</tr>' for r in b['usecase'])
+    faq = ''.join(f'<h3>{e(q)}</h3><p>{e(a)}</p>' for q, a in b['faq'])
+    return f'''{DISC}
+<section class="ghero">
+  <p class="eyebrow"><a href="/guides/">Guides</a> / {e(g['short'])}</p>
+  <h1>{e(b['h1'])}</h1>
+  <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published {e(b.get('published', CHECKED))} · Updated {e(b['updated'])}</p>
+  <p class="lede">{e(b['intro'])}</p>
+  <p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">See our #1 pick: {e(top['name'])} ({money(top['price'])})</a></p>
+</section>
+<article class="prose">
+<h2>Key takeaways</h2><ul>{''.join(f'<li>{e(t)}</li>' for t in b['takeaways'])}</ul>
+<h2>What a bourbon lover's gift actually is (and what it is not)</h2>{''.join(f'<p>{e(t)}</p>' for t in b['whatis'])}
+<h2>How we ranked these gifts</h2><p>We ranked each pick on four criteria. We don't publish ratings, review counts, or stats we haven't verified.</p><ul>{crit}</ul>
+<h2>The best gifts for a bourbon lover in 2026</h2><p>Picks are ordered by how directly they tie to the drink, then by everyday usefulness. Drinkware comes first. Gifts for the setting come after that. Every price is the maker's listed price as of {CHECKED}.</p>
+</article>
+<ol class="picks">{items}</ol>
+<article class="prose">
+<h2>Side-by-side comparison</h2><p>The same four criteria: tie to the drink, price, where he uses it, and how often.</p>
+<div class="tbl"><table><thead><tr><th>#</th><th>Gift</th><th>Price</th><th>Tie to drink</th><th>Where</th><th>How often</th></tr></thead><tbody>{rows}</tbody></table></div>
+<h2>Which bourbon gift fits him</h2>
+<div class="tbl"><table><thead><tr><th>If he…</th><th>Get</th><th>Or</th></tr></thead><tbody>{uc}</tbody></table></div>
+<h2>Frequently asked questions</h2>{faq}
+<h2>Get him the #1 pick</h2><p>If you only buy one thing, make it the flask. It's {money(top['price'])}. It's the most bourbon-specific gift here. He'll use it every season. It ships straight from {e(top['merchant'])}. <a href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}</a>.</p>
+</article>'''
+
 # Guides
 for g in G:
     ps = [P[i] for i in g['picks']]
@@ -112,11 +156,13 @@ for g in G:
     <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
   </div>
 </li>'''
-    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": g['title'], "url": f"{SITE}/guides/{g['slug']}/", "numberOfItems": len(ps),
-          "itemListElement": [{"@type": "ListItem", "position": n, "name": p['name'], "url": link(p)} for n, p in enumerate(ps, 1)]}
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": g.get('best', {}).get('h1', g['title']), "url": f"{SITE}/guides/{g['slug']}/", "numberOfItems": len(ps),
+          "itemListElement": [{"@type": "ListItem", "position": n, "name": p['name'], "url": link(p)} for n, p in enumerate([P[i] for i in g['best']['order']] if g.get('best') else ps, 1)]}
     head = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
     others = ''.join(card(BY[s]) for s in [x['slug'] for x in G if x['slug'] != g['slug']][:3])
-    body = f'''{DISC}
+    body = best_body(g) + f'''
+{newsletter()}
+<section class="wrap"><p class="eyebrow">Keep browsing</p><div class="ggrid">{others}</div></section>''' if g.get('best') else f'''{DISC}
 <section class="ghero">
   <p class="eyebrow"><a href="/guides/">Guides</a> / {e(g['short'])}</p>
   <h1>{e(g['title'])}</h1>
@@ -126,8 +172,8 @@ for g in G:
 <ol class="picks">{items}</ol>
 {newsletter()}
 <section class="wrap"><p class="eyebrow">Keep browsing</p><div class="ggrid">{others}</div></section>'''
-    desc = g['intro'][:155].rsplit(' ', 1)[0] + '…'
-    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", f"{g['title']} | SlateCliff", desc, body, head, 'article'))
+    desc = (g['best']['intro'] if g.get('best') else g['intro'])[:155].rsplit(' ', 1)[0] + '…'
+    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", f"{g.get('best', {}).get('h1', g['title'])} | SlateCliff", desc, body, head, 'article'))
 
 # Guides index
 def section(id_, label, opts, key):
