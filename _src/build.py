@@ -102,6 +102,7 @@ def best_body(g):
     crit = ''.join(f'<li><strong>{e(k)}:</strong> {e(v)}</li>' for k, v in b['criteria'])
     items = ''
     for n, p in enumerate(ps, 1):
+        note = '<p class="note">Manufacturer-refurbished unit.</p>' if p.get('note') else ''
         items += f'''<li class="pick" id="{e(p['id'])}">
   {tile(p)}
   <div class="pbody">
@@ -109,7 +110,7 @@ def best_body(g):
     <h3>{n}. {e(p['name'])}, best for {e(b['best_for'][p['id']])}</h3>
     <p class="price">{money(p['price'])} <span>as of {CHECKED}; prices may change</span></p>
     <p>{e(p['why'])}</p>
-    <p><strong>Best suited for:</strong> {e(b['best_for'][p['id']][0].upper() + b['best_for'][p['id']][1:])}. Tie to the drink: {e(b['table'][p['id']][0].lower())}; used {e(b['table'][p['id']][1].lower())}.</p>
+    <p><strong>Best suited for:</strong> {e(b['best_for'][p['id']][0].upper() + b['best_for'][p['id']][1:])}. {e(b['dim'])}: {e(b['table'][p['id']][0].lower())}; used {e(b['table'][p['id']][1].lower())}.</p>{note}
     <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
   </div>
 </li>'''
@@ -126,18 +127,18 @@ def best_body(g):
 </section>
 <article class="prose">
 <h2>Key takeaways</h2><ul>{''.join(f'<li>{e(t)}</li>' for t in b['takeaways'])}</ul>
-<h2>What a bourbon lover's gift actually is (and what it is not)</h2>{''.join(f'<p>{e(t)}</p>' for t in b['whatis'])}
+<h2>{e(b['whatis_h'])}</h2>{''.join(f'<p>{e(t)}</p>' for t in b['whatis'])}
 <h2>How we ranked these gifts</h2><p>We ranked each pick on four criteria. We don't publish ratings, review counts, or stats we haven't verified.</p><ul>{crit}</ul>
-<h2>The best gifts for a bourbon lover in 2026</h2><p>Picks are ordered by how directly they tie to the drink, then by everyday usefulness. Drinkware comes first. Gifts for the setting come after that. Every price is the maker's listed price as of {CHECKED}.</p>
+<h2>{e(b['list_h'])}</h2><p>{e(b['list_intro'])} Every price is the maker's listed price as of {CHECKED}.</p>
 </article>
 <ol class="picks">{items}</ol>
 <article class="prose">
-<h2>Side-by-side comparison</h2><p>The same four criteria: tie to the drink, price, where he uses it, and how often.</p>
-<div class="tbl"><table><thead><tr><th>#</th><th>Gift</th><th>Price</th><th>Tie to drink</th><th>Where</th><th>How often</th></tr></thead><tbody>{rows}</tbody></table></div>
-<h2>Which bourbon gift fits him</h2>
+<h2>Side-by-side comparison</h2><p>The same four criteria: {e(b['dim'].lower())}, price, where he uses it, and how often.</p>
+<div class="tbl"><table><thead><tr><th>#</th><th>Gift</th><th>Price</th><th>{e(b['dim'])}</th><th>Where</th><th>How often</th></tr></thead><tbody>{rows}</tbody></table></div>
+<h2>{e(b['fit_h'])}</h2>
 <div class="tbl"><table><thead><tr><th>If he…</th><th>Get</th><th>Or</th></tr></thead><tbody>{uc}</tbody></table></div>
 <h2>Frequently asked questions</h2>{faq}
-<h2>Get him the #1 pick</h2><p>If you only buy one thing, make it the flask. It's {money(top['price'])}. It's the most bourbon-specific gift here. He'll use it every season. It ships straight from {e(top['merchant'])}. <a href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}</a>.</p>
+<h2>Get him the #1 pick</h2><p>{e(b['cta'])} It's {money(top['price'])}. It ships straight from {e(top['merchant'])}. <a href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}</a>.</p>
 </article>'''
 
 # Guides

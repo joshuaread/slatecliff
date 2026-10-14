@@ -684,7 +684,178 @@
    ],
    "budget": "under-30",
    "occasion": "christmas",
-   "guy": "any"
+   "guy": "any",
+   "best": {
+    "h1": "Best Stocking Stuffers for Him in 2026: The Buyer's Shortlist (All Under $30)",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of stocking stuffers for him is the Leatherman OPNR ($10). It's $10, it lives on his keys, and he'll actually use it every week. Below are 11 stocking stuffers for him, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Leatherman OPNR at $10. It's $10, it lives on his keys, and he'll actually use it every week.",
+     "The list has 11 picks, from $10 (Leatherman OPNR) to $29.95 (Fellow Carter Slide Mug).",
+     "Picks come from 7 makers: Fellow, Filson, Leatherman, Portland Leather Goods, Ridge, Stanley 1913, The James Brand.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What stocking stuffers for him actually are (and what they are not)",
+    "whatis": [
+     "A good stocking stuffer is a small, useful thing he'll keep using after the wrapping paper is gone: something for his keys, his coffee, or his gear. It should be cheap enough to tuck into a stocking but well made enough that he notices the difference.",
+     "It is not a gag gift, novelty socks, or a gadget that breaks by New Year's. Every pick here comes from a maker known for durable gear, and every one was under $30 when we checked."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best stocking stuffers for him in 2026",
+    "list_intro": "Picks are ordered by how often he'll use them, then by price. Everyday carry and coffee come first. Occasional-use drinkware comes after that.",
+    "dim": "Type",
+    "best_for": {
+     "opnr": "a $10 everyday upgrade",
+     "companion-blend": "the coffee drinker",
+     "titanium-keyring": "replacing a flimsy split ring",
+     "classic-legendary-camp-mug-12oz": "his truck or desk",
+     "dry-wax-reproofer": "the guy with a waxed jacket or bag",
+     "adventure-stacking-beer-pint-16-oz": "porch and tailgate drinks",
+     "snap-airtag-holder": "the guy who loses his keys",
+     "wallet-chain": "Ridge wallet owners",
+     "classic-easy-fill-wide-mouth-flask-8-oz": "game days and toasts",
+     "adventure-nesting-shot-glass-set": "guys' weekends",
+     "carter-slide-mug": "the coffee commuter"
+    },
+    "order": [
+     "opnr",
+     "companion-blend",
+     "titanium-keyring",
+     "classic-legendary-camp-mug-12oz",
+     "dry-wax-reproofer",
+     "adventure-stacking-beer-pint-16-oz",
+     "snap-airtag-holder",
+     "wallet-chain",
+     "classic-easy-fill-wide-mouth-flask-8-oz",
+     "adventure-nesting-shot-glass-set",
+     "carter-slide-mug"
+    ],
+    "table": {
+     "opnr": [
+      "Tool",
+      "On the go",
+      "Weekly"
+     ],
+     "companion-blend": [
+      "Consumable",
+      "Home",
+      "Daily until gone"
+     ],
+     "titanium-keyring": [
+      "Carry",
+      "On the go",
+      "Daily"
+     ],
+     "classic-legendary-camp-mug-12oz": [
+      "Drinkware",
+      "Both",
+      "Daily"
+     ],
+     "dry-wax-reproofer": [
+      "Care",
+      "Home",
+      "Seasonal"
+     ],
+     "adventure-stacking-beer-pint-16-oz": [
+      "Drinkware",
+      "Both",
+      "Weekends"
+     ],
+     "snap-airtag-holder": [
+      "Carry",
+      "On the go",
+      "Daily"
+     ],
+     "wallet-chain": [
+      "Carry",
+      "On the go",
+      "Daily"
+     ],
+     "classic-easy-fill-wide-mouth-flask-8-oz": [
+      "Drinkware",
+      "On the go",
+      "Occasional"
+     ],
+     "adventure-nesting-shot-glass-set": [
+      "Drinkware",
+      "On the go",
+      "Trips"
+     ],
+     "carter-slide-mug": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He carries a lot on his keys",
+      "Leatherman OPNR",
+      "The James Brand Titanium Keyring"
+     ],
+     [
+      "He lives on coffee",
+      "Fellow Companion Blend",
+      "Fellow Carter Slide Mug"
+     ],
+     [
+      "He's outdoorsy",
+      "Stanley Adventure Stacking Beer Pint 16 oz",
+      "Stanley Adventure Nesting Shot Glass Set"
+     ],
+     [
+      "He loses things",
+      "Portland Leather Snap AirTag Holder",
+      "Ridge Wallet Chain + D Ring"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best stocking stuffer for a man?",
+      "Something small he'll use weekly. Our top pick is the Leatherman OPNR at $10."
+     ],
+     [
+      "What's a good stocking stuffer for a coffee lover?",
+      "A bag of Fellow Companion Blend ($17) or the Fellow Carter Slide Mug ($29.95)."
+     ],
+     [
+      "How much do these stocking stuffers for him cost?",
+      "They run from $10 to $29.95 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Fellow, Filson, Leatherman, Portland Leather Goods, Ridge, Stanley 1913, The James Brand). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the OPNR. It's small, useful, and leaves room in the budget to fill the rest of the stocking."
+   }
   },
   {
    "slug": "leather-anniversary-gifts",
@@ -705,7 +876,171 @@
    ],
    "budget": "splurge",
    "occasion": "anniversary",
-   "guy": "husband"
+   "guy": "husband",
+   "best": {
+    "h1": "Best Leather Anniversary Gifts for Him in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of leather anniversary gifts for him is the Portland Leather Lucca Bifold Wallet ($80). It's a classic leather gift he'll use daily, and it gets better with age. Below are 10 leather anniversary gifts for him, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Portland Leather Lucca Bifold Wallet at $80. It's a classic leather gift he'll use daily, and it gets better with age.",
+     "The list has 10 picks, from $30 (Leatherman Leather Box Sheath) to $198 (Buck Mason x Y'2 Leather Zip Wallet – Black).",
+     "Picks come from 5 makers: Buck Mason, Filson, Leatherman, Portland Leather Goods, Ridge.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What leather anniversary gifts for him actually are (and what they are not)",
+    "whatis": [
+     "The third anniversary is traditionally leather, so a leather anniversary gift is anything made of leather that marks the year. The best ones are things he'll carry or wear every day, so the leather wears in the way a relationship does.",
+     "It is not a leather trinket that sits on a shelf, and it doesn't have to be expensive. These picks run from a $30 sheath to a $198 splurge wallet, all from established leather makers."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best leather anniversary gifts for him in 2026",
+    "list_intro": "Picks are ordered by how classic and daily-use they are. Wallets and belts come first. Travel and accessories come after that.",
+    "dim": "Type",
+    "best_for": {
+     "lucca-bifold-wallet": "a classic third-anniversary wallet",
+     "mens-frontier-leather-belt": "an everyday leather belt",
+     "napoli-card-holder": "the minimalist",
+     "deluxe-dopp-kit": "the guy who travels",
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1": "the budget leather pick",
+     "leather-wrap-journal": "the list-maker",
+     "leather-box-sheath": "the multitool owner",
+     "brown-leather-outpost-belt": "a rugged denim belt",
+     "wallet-power-bank-tobacco-brown-leather-matte-black": "a dying phone battery",
+     "black-y2-leather-x-buck-mason-leather-zip-wallet": "the splurge"
+    },
+    "order": [
+     "lucca-bifold-wallet",
+     "mens-frontier-leather-belt",
+     "napoli-card-holder",
+     "deluxe-dopp-kit",
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1",
+     "leather-wrap-journal",
+     "leather-box-sheath",
+     "brown-leather-outpost-belt",
+     "wallet-power-bank-tobacco-brown-leather-matte-black",
+     "black-y2-leather-x-buck-mason-leather-zip-wallet"
+    ],
+    "table": {
+     "lucca-bifold-wallet": [
+      "Wallet",
+      "On the go",
+      "Daily"
+     ],
+     "mens-frontier-leather-belt": [
+      "Belt",
+      "On the go",
+      "Daily"
+     ],
+     "napoli-card-holder": [
+      "Wallet",
+      "On the go",
+      "Daily"
+     ],
+     "deluxe-dopp-kit": [
+      "Travel",
+      "Trips",
+      "Every trip"
+     ],
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1": [
+      "Belt",
+      "On the go",
+      "Daily"
+     ],
+     "leather-wrap-journal": [
+      "Desk",
+      "Home",
+      "As he likes"
+     ],
+     "leather-box-sheath": [
+      "Accessory",
+      "On the go",
+      "Daily"
+     ],
+     "brown-leather-outpost-belt": [
+      "Belt",
+      "On the go",
+      "Daily"
+     ],
+     "wallet-power-bank-tobacco-brown-leather-matte-black": [
+      "Wallet",
+      "On the go",
+      "Daily"
+     ],
+     "black-y2-leather-x-buck-mason-leather-zip-wallet": [
+      "Wallet",
+      "On the go",
+      "Daily"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He carries a bulky wallet",
+      "Portland Leather Napoli Card Holder",
+      "Portland Leather Lucca Bifold Wallet"
+     ],
+     [
+      "He travels a lot",
+      "Portland Leather Deluxe Dopp Kit",
+      "Ridge Wallet + Power Bank"
+     ],
+     [
+      "He wears jeans daily",
+      "Portland Leather Frontier Belt",
+      "Buck Mason Brown Leather Outpost Belt"
+     ],
+     [
+      "You want a milestone splurge",
+      "Buck Mason x Y'2 Leather Zip Wallet",
+      "Buck Mason Brown Leather Outpost Belt"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the traditional third anniversary gift?",
+      "Leather. Anything he'll use daily, like a wallet or belt, fits the tradition."
+     ],
+     [
+      "What is the best leather anniversary gift for a husband?",
+      "Our top pick is the Portland Leather Lucca Bifold Wallet at $80, a classic he'll carry every day."
+     ],
+     [
+      "How much do these leather anniversary gifts for him cost?",
+      "They run from $30 to $198 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Buck Mason, Filson, Leatherman, Portland Leather Goods, Ridge). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Lucca bifold. It's the most classic leather gift on the list."
+   }
   },
   {
    "slug": "coffee-gifts-for-dad",
@@ -726,7 +1061,171 @@
    ],
    "budget": "splurge",
    "occasion": "fathers-day",
-   "guy": "coffee"
+   "guy": "coffee",
+   "best": {
+    "h1": "Best Coffee Gifts for Dad in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of coffee gifts for dad is the Fellow Opus 2 Conical Burr Grinder ($199.95). A real burr grinder is the single biggest upgrade to a home coffee setup. Below are 10 coffee gifts for dad, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Fellow Opus 2 Conical Burr Grinder at $199.95. A real burr grinder is the single biggest upgrade to a home coffee setup.",
+     "The list has 10 picks, from $17 (Fellow Companion Blend (coffee)) to $299.95 (Fellow Rebrew Aiden Precision Coffee Maker (refurbished)).",
+     "Picks come from 2 makers: Fellow, Stanley 1913.",
+     "2 picks are manufacturer-refurbished units (Fellow Rebrew Stagg EKG Electric Kettle (refurbished), Fellow Rebrew Aiden Precision Coffee Maker (refurbished)), labeled clearly. We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What coffee gifts for dad actually are (and what they are not)",
+    "whatis": [
+     "A coffee gift for dad is anything that makes his daily cup better: the beans, the grinder, the kettle, or what he drinks it from. The right one depends on how deep into coffee he already is.",
+     "It is not a novelty mug or a gift card he'll forget. Two picks here are manufacturer-refurbished units, which we label clearly, so check the merchant's refurb terms before you buy."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best coffee gifts for dad in 2026",
+    "list_intro": "Picks are ordered by how much they improve the cup, then by price. Brewing gear comes first. Drinkware comes after that.",
+    "dim": "Type",
+    "best_for": {
+     "opus-2-conical-burr-grinder": "upgrading from pre-ground",
+     "companion-blend": "any coffee dad",
+     "carter-slide-mug": "the commuter",
+     "refurbished-stagg-ekg-electric-kettle": "pour-over at a lower price",
+     "rebrew-aiden-precision-coffee-maker": "the serious brewer",
+     "classic-stay-hot-french-press-48-oz": "brewing for a crowd",
+     "transit-flip-top-mug-16-oz-fall-refresh": "cupholders and early mornings",
+     "classic-legendary-bottle-1-1-qt-1": "long days on the job",
+     "the-stay-hot-camp-mug-24-oz": "coffee by the quart",
+     "espresso-knock-box": "espresso machine owners"
+    },
+    "order": [
+     "opus-2-conical-burr-grinder",
+     "companion-blend",
+     "carter-slide-mug",
+     "refurbished-stagg-ekg-electric-kettle",
+     "rebrew-aiden-precision-coffee-maker",
+     "classic-stay-hot-french-press-48-oz",
+     "transit-flip-top-mug-16-oz-fall-refresh",
+     "classic-legendary-bottle-1-1-qt-1",
+     "the-stay-hot-camp-mug-24-oz",
+     "espresso-knock-box"
+    ],
+    "table": {
+     "opus-2-conical-burr-grinder": [
+      "Gear",
+      "Home",
+      "Daily"
+     ],
+     "companion-blend": [
+      "Consumable",
+      "Home",
+      "Daily until gone"
+     ],
+     "carter-slide-mug": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "refurbished-stagg-ekg-electric-kettle": [
+      "Gear",
+      "Home",
+      "Daily"
+     ],
+     "rebrew-aiden-precision-coffee-maker": [
+      "Gear",
+      "Home",
+      "Daily"
+     ],
+     "classic-stay-hot-french-press-48-oz": [
+      "Gear",
+      "Both",
+      "Weekends"
+     ],
+     "transit-flip-top-mug-16-oz-fall-refresh": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "classic-legendary-bottle-1-1-qt-1": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "the-stay-hot-camp-mug-24-oz": [
+      "Drinkware",
+      "Both",
+      "Daily"
+     ],
+     "espresso-knock-box": [
+      "Accessory",
+      "Home",
+      "Daily"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He buys pre-ground coffee",
+      "Fellow Opus 2 Conical Burr Grinder",
+      "Fellow Companion Blend"
+     ],
+     [
+      "He does pour-over",
+      "Fellow Stagg EKG Kettle (refurbished)",
+      "Fellow Companion Blend"
+     ],
+     [
+      "He commutes",
+      "Fellow Carter Slide Mug",
+      "Stanley Transit 2.0 Flip Top Mug"
+     ],
+     [
+      "He works outside",
+      "Stanley Classic Legendary Bottle 1.1 qt",
+      "Stanley Stay-Hot Camp Mug 24 oz"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best coffee gift for a dad?",
+      "Our top pick is the Fellow Opus 2 Conical Burr Grinder at $199.95, the biggest single upgrade for home coffee."
+     ],
+     [
+      "Are the refurbished picks worth it?",
+      "They're manufacturer-refurbished units sold by Fellow at lower prices. Check the merchant's refurb terms before buying."
+     ],
+     [
+      "How much do these coffee gifts for dad cost?",
+      "They run from $17 to $299.95 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Fellow, Stanley 1913). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Opus 2 grinder. Fresh-ground beans make every cup he brews better."
+   }
   },
   {
    "slug": "edc-gifts-for-boyfriend",
@@ -747,7 +1246,171 @@
    ],
    "budget": "under-150",
    "occasion": "birthday",
-   "guy": "edc"
+   "guy": "edc",
+   "best": {
+    "h1": "Best EDC Gifts for Your Boyfriend in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of EDC gifts for your boyfriend is the Ridge Wallet – Phantom ($95). A slim metal wallet is the EDC piece he'll touch every single day. Below are 10 EDC gifts for your boyfriend, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Ridge Wallet – Phantom at $95. A slim metal wallet is the EDC piece he'll touch every single day.",
+     "The list has 10 picks, from $24 (Portland Leather Snap AirTag Holder) to $149 (The James Brand Carter).",
+     "Picks come from 5 makers: Filson, Leatherman, Portland Leather Goods, Ridge, The James Brand.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What EDC gifts for your boyfriend actually are (and what they are not)",
+    "whatis": [
+     "Everyday carry, or EDC, is what he keeps in his pockets: wallet, keys, a knife or tool, maybe a pen. An EDC gift upgrades one of those things, so he uses it every day.",
+     "It is not tactical gear or a pile of gadgets. You don't need to know the jargon. Each pick is a single, well-made item at $24 to $149."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best EDC gifts for your boyfriend in 2026",
+    "list_intro": "Picks are ordered by how essential they are to daily carry. Wallet and keys come first, then knives and tools, then extras.",
+    "dim": "Type",
+    "best_for": {
+     "phantom": "replacing a bulky wallet",
+     "kintsugi-navy-keycase": "quiet, organized keys",
+     "the-elko": "a first nice knife",
+     "micra": "a first multitool",
+     "skeletool": "a light daily multitool",
+     "the-hardin": "an affordable pocket tool",
+     "the-burwell": "signing things in style",
+     "brass-lockback-pocket-knife-brass": "classic looks and patina",
+     "snap-airtag-holder": "tracking keys",
+     "the-carter": "the step-up knife"
+    },
+    "order": [
+     "phantom",
+     "kintsugi-navy-keycase",
+     "the-elko",
+     "micra",
+     "skeletool",
+     "the-hardin",
+     "the-burwell",
+     "brass-lockback-pocket-knife-brass",
+     "snap-airtag-holder",
+     "the-carter"
+    ],
+    "table": {
+     "phantom": [
+      "Wallet",
+      "Pocket",
+      "Daily"
+     ],
+     "kintsugi-navy-keycase": [
+      "Keys",
+      "Pocket",
+      "Daily"
+     ],
+     "the-elko": [
+      "Knife",
+      "Pocket",
+      "Daily"
+     ],
+     "micra": [
+      "Multitool",
+      "Keys",
+      "Daily"
+     ],
+     "skeletool": [
+      "Multitool",
+      "Pocket",
+      "Daily"
+     ],
+     "the-hardin": [
+      "Tool",
+      "Pocket",
+      "Daily"
+     ],
+     "the-burwell": [
+      "Pen",
+      "Pocket",
+      "Daily"
+     ],
+     "brass-lockback-pocket-knife-brass": [
+      "Knife",
+      "Pocket",
+      "Daily"
+     ],
+     "snap-airtag-holder": [
+      "Keys",
+      "Keys",
+      "Daily"
+     ],
+     "the-carter": [
+      "Knife",
+      "Pocket",
+      "Daily"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He has a bulky wallet",
+      "Ridge Wallet – Phantom",
+      "Portland Leather Snap AirTag Holder"
+     ],
+     [
+      "He's never owned a knife",
+      "The James Brand Elko",
+      "The James Brand Hardin"
+     ],
+     [
+      "He fixes things",
+      "Leatherman Skeletool",
+      "Leatherman Micra"
+     ],
+     [
+      "You want a step-up gift",
+      "The James Brand Carter",
+      "The James Brand Burwell"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best EDC gift for a boyfriend?",
+      "Our top pick is the Ridge Wallet – Phantom at $95."
+     ],
+     [
+      "What is EDC?",
+      "Everyday carry: the items a guy keeps in his pockets every day."
+     ],
+     [
+      "How much do these EDC gifts for your boyfriend cost?",
+      "They run from $24 to $149 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Filson, Leatherman, Portland Leather Goods, Ridge, The James Brand). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Ridge Phantom. It replaces something he already carries with something better."
+   }
   },
   {
    "slug": "gifts-for-handy-husband",
@@ -768,7 +1431,171 @@
    ],
    "budget": "splurge",
    "occasion": "christmas",
-   "guy": "handy"
+   "guy": "handy",
+   "best": {
+    "h1": "Best Gifts for a Handy Husband in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of gifts for a handy husband is the Leatherman Wave Plus ($129.95). It's the full-size multitool that lives in a lot of trucks and junk drawers. Below are 10 gifts for a handy husband, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Leatherman Wave Plus at $129.95. It's the full-size multitool that lives in a lot of trucks and junk drawers.",
+     "The list has 10 picks, from $36 (The Leatherman Book) to $208 (Taylor Stitch Good Acre Chore Pant – Olive Canvas).",
+     "Picks come from 4 makers: Filson, Leatherman, Taylor Stitch, The James Brand.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What gifts for a handy husband actually are (and what they are not)",
+    "whatis": [
+     "A gift for a handy husband is a tool or piece of workwear that helps him fix, build, or tinker. The best ones fill a gap: the tool he keeps borrowing or the pants he'd wear out on purpose.",
+     "It is not a giant tool set he doesn't have room for. These are single, trusted pieces from Leatherman, The James Brand, Filson, and Taylor Stitch."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best gifts for a handy husband in 2026",
+    "list_intro": "Picks are ordered by how often he'll reach for them. Multitools come first, then knives and accessories, then workwear.",
+    "dim": "Type",
+    "best_for": {
+     "wave": "the all-around fixer",
+     "rev": "a budget first multitool",
+     "free-k2x": "opening boxes and small fixes",
+     "bit-kit-set": "expanding a multitool",
+     "precision-adjust-knife-sharpener": "keeping blades sharp",
+     "the-halifax": "an everyday utility knife",
+     "dry-tin-cloth-5-pocket-pants-natural-seed": "yard and shop work",
+     "signal": "the handy guy who camps",
+     "good-acre-chore-pant-in-olive-canvas-2609": "workwear that looks good off the job",
+     "the-leatherman-book": "the guy who already has a multitool"
+    },
+    "order": [
+     "wave",
+     "rev",
+     "free-k2x",
+     "bit-kit-set",
+     "precision-adjust-knife-sharpener",
+     "the-halifax",
+     "dry-tin-cloth-5-pocket-pants-natural-seed",
+     "signal",
+     "good-acre-chore-pant-in-olive-canvas-2609",
+     "the-leatherman-book"
+    ],
+    "table": {
+     "wave": [
+      "Multitool",
+      "Both",
+      "Daily"
+     ],
+     "rev": [
+      "Multitool",
+      "Both",
+      "Weekly"
+     ],
+     "free-k2x": [
+      "Knife + tools",
+      "Pocket",
+      "Daily"
+     ],
+     "bit-kit-set": [
+      "Accessory",
+      "Both",
+      "As needed"
+     ],
+     "precision-adjust-knife-sharpener": [
+      "Shop",
+      "Home",
+      "As needed"
+     ],
+     "the-halifax": [
+      "Knife",
+      "Pocket",
+      "Daily"
+     ],
+     "dry-tin-cloth-5-pocket-pants-natural-seed": [
+      "Workwear",
+      "Both",
+      "Weekends"
+     ],
+     "signal": [
+      "Multitool",
+      "Outdoors",
+      "Trips"
+     ],
+     "good-acre-chore-pant-in-olive-canvas-2609": [
+      "Workwear",
+      "Both",
+      "Weekends"
+     ],
+     "the-leatherman-book": [
+      "Book",
+      "Home",
+      "Once"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He has no multitool",
+      "Leatherman Wave Plus",
+      "Leatherman Rev"
+     ],
+     [
+      "He camps or hunts",
+      "Leatherman Signal",
+      "Leatherman FREE K2X"
+     ],
+     [
+      "He works in the yard",
+      "Filson Dry Tin Cloth 5-Pocket Pants",
+      "Taylor Stitch Good Acre Chore Pant"
+     ],
+     [
+      "He owns lots of knives",
+      "Precision Adjust Knife Sharpener",
+      "The James Brand Halifax"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best gift for a handy husband?",
+      "Our top pick is the Leatherman Wave Plus at $129.95."
+     ],
+     [
+      "What's a budget gift for a handy guy?",
+      "The Leatherman Rev ($44.95) or the Bit Kit Set ($40)."
+     ],
+     [
+      "How much do these gifts for a handy husband cost?",
+      "They run from $36 to $208 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Filson, Leatherman, Taylor Stitch, The James Brand). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Wave Plus. It's the tool he'll reach for on every small job."
+   }
   },
   {
    "slug": "gifts-for-bourbon-lover",
@@ -943,7 +1770,13 @@
       "Where do these gifts ship from?",
       "Each link goes straight to the maker (Stanley 1913, Leatherman, Buck Mason, Filson, Taylor Stitch, Portland Leather Goods). Shipping and returns are handled by that merchant."
      ]
-    ]
+    ],
+    "whatis_h": "What a bourbon lover's gift actually is (and what it is not)",
+    "list_h": "The best gifts for a bourbon lover in 2026",
+    "list_intro": "Picks are ordered by how directly they tie to the drink, then by everyday usefulness. Drinkware comes first. Gifts for the setting come after that.",
+    "dim": "Tie to the drink",
+    "fit_h": "Which bourbon gift fits him",
+    "cta": "If you only buy one thing, make it the flask. It's the most bourbon-specific gift here, and he'll use it every season."
    }
   },
   {
@@ -965,7 +1798,171 @@
    ],
    "budget": "under-100",
    "occasion": "birthday",
-   "guy": "outdoors"
+   "guy": "outdoors",
+   "best": {
+    "h1": "Best Camping Gifts for Him Under $100 in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of camping gifts for him under $100 is the Stanley Classic Legendary Bottle 1.1 qt ($36). It's the classic thermos that keeps coffee going through a long day outdoors. Below are 10 camping gifts for him under $100, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Stanley Classic Legendary Bottle 1.1 qt at $36. It's the classic thermos that keeps coffee going through a long day outdoors.",
+     "The list has 10 picks, from $23 (Stanley Classic Legendary Camp Mug 12 oz) to $89.95 (Leatherman Skeletool).",
+     "Picks come from 4 makers: Filson, Leatherman, Stanley 1913, The James Brand.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What camping gifts for him under $100 actually are (and what they are not)",
+    "whatis": [
+     "A camping gift is something small he'll pack on every trip: a bottle, a mug, a tool, a hat. Every pick here was under $100 when we checked.",
+     "It is not a tent or a big-ticket gear upgrade he'd want to choose himself. These are the durable small things that go in the pack every time."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best camping gifts for him under $100 in 2026",
+    "list_intro": "Picks are ordered by how often they come on the trip. Coffee and tools come first, then apparel and travel.",
+    "dim": "Type",
+    "best_for": {
+     "classic-legendary-bottle-1-1-qt-1": "coffee all day outdoors",
+     "classic-stay-hot-french-press-48-oz": "coffee for the whole camp",
+     "rev": "a budget camp tool",
+     "skeletool": "a light pack tool",
+     "classic-legendary-camp-mug-12oz": "a single camp mug",
+     "everyday-camp-mug-set-11-oz": "a mug for everyone",
+     "the-elko": "a first nice knife",
+     "tin-cloth-bush-hat-otter-green": "sun and drizzle",
+     "watch-cap-otter-green": "cold mornings",
+     "all-weather-dopp-kit-buckskin-camo": "hunting weekends"
+    },
+    "order": [
+     "classic-legendary-bottle-1-1-qt-1",
+     "classic-stay-hot-french-press-48-oz",
+     "rev",
+     "skeletool",
+     "classic-legendary-camp-mug-12oz",
+     "everyday-camp-mug-set-11-oz",
+     "the-elko",
+     "tin-cloth-bush-hat-otter-green",
+     "watch-cap-otter-green",
+     "all-weather-dopp-kit-buckskin-camo"
+    ],
+    "table": {
+     "classic-legendary-bottle-1-1-qt-1": [
+      "Drinkware",
+      "Camp",
+      "Every trip"
+     ],
+     "classic-stay-hot-french-press-48-oz": [
+      "Cook",
+      "Camp",
+      "Every trip"
+     ],
+     "rev": [
+      "Multitool",
+      "Camp",
+      "Every trip"
+     ],
+     "skeletool": [
+      "Multitool",
+      "Both",
+      "Daily"
+     ],
+     "classic-legendary-camp-mug-12oz": [
+      "Drinkware",
+      "Both",
+      "Daily"
+     ],
+     "everyday-camp-mug-set-11-oz": [
+      "Drinkware",
+      "Camp",
+      "Every trip"
+     ],
+     "the-elko": [
+      "Knife",
+      "Both",
+      "Daily"
+     ],
+     "tin-cloth-bush-hat-otter-green": [
+      "Apparel",
+      "Camp",
+      "Every trip"
+     ],
+     "watch-cap-otter-green": [
+      "Apparel",
+      "Both",
+      "Seasonal"
+     ],
+     "all-weather-dopp-kit-buckskin-camo": [
+      "Travel",
+      "Camp",
+      "Every trip"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He drinks coffee at camp",
+      "Stanley Classic Legendary Bottle 1.1 qt",
+      "Stanley Classic Stay Hot French Press 48 oz"
+     ],
+     [
+      "He camps with a group",
+      "Stanley Everyday Camp Mug Set",
+      "Stanley Classic Stay Hot French Press 48 oz"
+     ],
+     [
+      "He needs a tool",
+      "Leatherman Rev",
+      "Leatherman Skeletool"
+     ],
+     [
+      "He's out in the weather",
+      "Filson Tin Cloth Bush Hat",
+      "Filson Watch Cap"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best camping gift for a man under $100?",
+      "Our top pick is the Stanley Classic Legendary Bottle 1.1 qt at $36."
+     ],
+     [
+      "What camping gift is under $30?",
+      "The Stanley Classic Legendary Camp Mug ($23) or Stay Hot French Press ($28)."
+     ],
+     [
+      "How much do these camping gifts for him under $100 cost?",
+      "They run from $23 to $89.95 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Filson, Leatherman, Stanley 1913, The James Brand). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Legendary Bottle. It goes on every trip, and the rest of the budget can go to a tool or a hat."
+   }
   },
   {
    "slug": "gifts-for-father-in-law",
@@ -985,7 +1982,164 @@
    ],
    "budget": "under-150",
    "occasion": "christmas",
-   "guy": "dad"
+   "guy": "dad",
+   "best": {
+    "h1": "Best Gifts for a Father-in-Law in 2026: The Buyer's Shortlist (Under $150)",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of gifts for a father-in-law is the Filson Alaskan Guide Shirt – Oatmeal/Pine Plaid ($149). It's a classic heavyweight flannel that's safe, classy, and impossible to misread. Below are 9 gifts for a father-in-law, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Filson Alaskan Guide Shirt – Oatmeal/Pine Plaid at $149. It's a classic heavyweight flannel that's safe, classy, and impossible to misread.",
+     "The list has 9 picks, from $29.95 (Fellow Carter Slide Mug) to $149 (Filson Alaskan Guide Shirt – Oatmeal/Pine Plaid).",
+     "Picks come from 6 makers: Buck Mason, Fellow, Filson, Leatherman, Portland Leather Goods, Stanley 1913.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What gifts for a father-in-law actually are (and what they are not)",
+    "whatis": [
+     "A father-in-law gift should be safe, classy, and impossible to misread. The best ones are classic, well-made pieces from established brands that show thought without trying too hard.",
+     "It is not a joke gift or anything too personal. Every pick here was under $150 when we checked."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best gifts for a father-in-law in 2026",
+    "list_intro": "Picks are ordered by how safe and classic they are. Apparel and leather come first, then gear, then smaller add-ons.",
+    "dim": "Type",
+    "best_for": {
+     "alaskan-guide-shirt-oatmeal-pine-plaid": "a classic flannel",
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1": "a practical leather gift",
+     "classic-legendary-bottle-1-1-qt-1": "the outdoor dad",
+     "wave": "the handy father-in-law",
+     "mackinaw-wool-cap-charcoal-2": "real cold",
+     "deluxe-dopp-kit": "the traveler",
+     "lone-pine-candle": "his den or office",
+     "carter-slide-mug": "the coffee commuter",
+     "brown-corgi-ribbed-cotton-dress-sock": "a low-pressure add-on"
+    },
+    "order": [
+     "alaskan-guide-shirt-oatmeal-pine-plaid",
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1",
+     "classic-legendary-bottle-1-1-qt-1",
+     "wave",
+     "mackinaw-wool-cap-charcoal-2",
+     "deluxe-dopp-kit",
+     "lone-pine-candle",
+     "carter-slide-mug",
+     "brown-corgi-ribbed-cotton-dress-sock"
+    ],
+    "table": {
+     "alaskan-guide-shirt-oatmeal-pine-plaid": [
+      "Apparel",
+      "Both",
+      "Weekly"
+     ],
+     "1-1-4-bridle-leather-belt-brown-leather-stainless-steel-1": [
+      "Accessory",
+      "Both",
+      "Daily"
+     ],
+     "classic-legendary-bottle-1-1-qt-1": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "wave": [
+      "Tool",
+      "Both",
+      "Weekly"
+     ],
+     "mackinaw-wool-cap-charcoal-2": [
+      "Apparel",
+      "Outdoors",
+      "Seasonal"
+     ],
+     "deluxe-dopp-kit": [
+      "Travel",
+      "Trips",
+      "Every trip"
+     ],
+     "lone-pine-candle": [
+      "Home",
+      "Home",
+      "Evenings"
+     ],
+     "carter-slide-mug": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "brown-corgi-ribbed-cotton-dress-sock": [
+      "Apparel",
+      "Both",
+      "Weekly"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He's outdoorsy",
+      "Filson Alaskan Guide Shirt",
+      "Filson Mackinaw Wool Cap"
+     ],
+     [
+      "He fixes things",
+      "Leatherman Wave Plus",
+      "Stanley Classic Legendary Bottle 1.1 qt"
+     ],
+     [
+      "He travels",
+      "Portland Leather Deluxe Dopp Kit",
+      "Fellow Carter Slide Mug"
+     ],
+     [
+      "You barely know him",
+      "Filson Bridle Leather Belt",
+      "Buck Mason Lone Pine Candle"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best gift for a father-in-law?",
+      "Our top pick is the Filson Alaskan Guide Shirt at $149."
+     ],
+     [
+      "What's a safe father-in-law gift under $50?",
+      "The Filson Bridle Leather Belt ($38.70), Stanley Legendary Bottle ($36), or Buck Mason dress socks ($32)."
+     ],
+     [
+      "How much do these gifts for a father-in-law cost?",
+      "They run from $29.95 to $149 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Buck Mason, Fellow, Filson, Leatherman, Portland Leather Goods, Stanley 1913). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Alaskan Guide Shirt. It's classic, and he'll wear it all season."
+   }
   },
   {
    "slug": "cozy-winter-gifts-for-him",
@@ -1006,7 +2160,171 @@
    ],
    "budget": "splurge",
    "occasion": "christmas",
-   "guy": "any"
+   "guy": "any",
+   "best": {
+    "h1": "Best Cozy Winter Gifts for Him in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of cozy winter gifts for him is the Taylor Stitch Maritime Shirt Jacket – Heather Olive Wool ($198). It's a heavy wool shirt jacket he'll layer over everything all season. Below are 10 cozy winter gifts for him, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Taylor Stitch Maritime Shirt Jacket – Heather Olive Wool at $198. It's a heavy wool shirt jacket he'll layer over everything all season.",
+     "The list has 10 picks, from $17 (Fellow Companion Blend (coffee)) to $198 (Taylor Stitch Maritime Shirt Jacket – Heather Olive Wool).",
+     "Picks come from 5 makers: Buck Mason, Fellow, Filson, Stanley 1913, Taylor Stitch.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What cozy winter gifts for him actually are (and what they are not)",
+    "whatis": [
+     "A cozy winter gift is a layer or comfort he'll use all season: a heavy sweater, a flannel, a beanie. The best ones come in easy colors that go with what he already owns.",
+     "It is not a one-off holiday novelty. These are well-made pieces from Taylor Stitch, Filson, and Buck Mason, plus a few cozy extras."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best cozy winter gifts for him in 2026",
+    "list_intro": "Picks are ordered by how much he'll wear them. Layers come first, then hats, then cozy extras for home.",
+    "dim": "Type",
+    "best_for": {
+     "maritime-shirt-jacket-in-heather-olive-wool-2610": "layering all winter",
+     "seafarer-crew-sweater-in-atlantic-blue-donegal-2610": "a winter uniform sweater",
+     "shore-shirt-in-deepwater-check-portuguese-flannel-2607": "a soft flannel",
+     "seafarer-beanie-in-natural-donegal-2611": "a neutral beanie",
+     "watch-cap-otter-green": "a classic knit cap",
+     "mackinaw-wool-cap-charcoal-2": "real cold",
+     "black-seafarer-cotton-beanie": "a safe black beanie",
+     "the-stay-hot-camp-mug-24-oz": "hot drinks by the quart",
+     "lone-pine-candle": "a cozy den",
+     "companion-blend": "a cozy add-on"
+    },
+    "order": [
+     "maritime-shirt-jacket-in-heather-olive-wool-2610",
+     "seafarer-crew-sweater-in-atlantic-blue-donegal-2610",
+     "shore-shirt-in-deepwater-check-portuguese-flannel-2607",
+     "seafarer-beanie-in-natural-donegal-2611",
+     "watch-cap-otter-green",
+     "mackinaw-wool-cap-charcoal-2",
+     "black-seafarer-cotton-beanie",
+     "the-stay-hot-camp-mug-24-oz",
+     "lone-pine-candle",
+     "companion-blend"
+    ],
+    "table": {
+     "maritime-shirt-jacket-in-heather-olive-wool-2610": [
+      "Outerwear",
+      "Both",
+      "Daily"
+     ],
+     "seafarer-crew-sweater-in-atlantic-blue-donegal-2610": [
+      "Knitwear",
+      "Both",
+      "Weekly"
+     ],
+     "shore-shirt-in-deepwater-check-portuguese-flannel-2607": [
+      "Shirt",
+      "Both",
+      "Weekly"
+     ],
+     "seafarer-beanie-in-natural-donegal-2611": [
+      "Hat",
+      "Outdoors",
+      "Daily"
+     ],
+     "watch-cap-otter-green": [
+      "Hat",
+      "Outdoors",
+      "Daily"
+     ],
+     "mackinaw-wool-cap-charcoal-2": [
+      "Hat",
+      "Outdoors",
+      "Seasonal"
+     ],
+     "black-seafarer-cotton-beanie": [
+      "Hat",
+      "Outdoors",
+      "Daily"
+     ],
+     "the-stay-hot-camp-mug-24-oz": [
+      "Drinkware",
+      "Both",
+      "Daily"
+     ],
+     "lone-pine-candle": [
+      "Home",
+      "Home",
+      "Evenings"
+     ],
+     "companion-blend": [
+      "Consumable",
+      "Home",
+      "Daily until gone"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "He's always cold",
+      "Taylor Stitch Maritime Shirt Jacket",
+      "Filson Mackinaw Wool Cap"
+     ],
+     [
+      "He likes classic style",
+      "Taylor Stitch Seafarer Crew Sweater",
+      "Taylor Stitch Shore Shirt"
+     ],
+     [
+      "You want under $60",
+      "Taylor Stitch Seafarer Beanie",
+      "Filson Watch Cap"
+     ],
+     [
+      "He's a homebody",
+      "Buck Mason Lone Pine Candle",
+      "Fellow Companion Blend"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best cozy winter gift for him?",
+      "Our top pick is the Taylor Stitch Maritime Shirt Jacket at $198."
+     ],
+     [
+      "What's a cozy gift under $50?",
+      "The Taylor Stitch Seafarer Beanie ($48), Stanley Stay-Hot Camp Mug ($28), or Fellow Companion Blend ($17)."
+     ],
+     [
+      "How much do these cozy winter gifts for him cost?",
+      "They run from $17 to $198 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Buck Mason, Fellow, Filson, Stanley 1913, Taylor Stitch). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the Maritime Shirt Jacket. He'll wear it from first frost to spring."
+   }
   },
   {
    "slug": "first-christmas-gifts-new-boyfriend",
@@ -1026,7 +2344,164 @@
    ],
    "budget": "under-100",
    "occasion": "christmas",
-   "guy": "boyfriend"
+   "guy": "boyfriend",
+   "best": {
+    "h1": "Best First Christmas Gifts for a New Boyfriend in 2026: The Buyer's Shortlist",
+    "updated": "October 14, 2026",
+    "intro": "The best pick in our list of first Christmas gifts for a new boyfriend is the Taylor Stitch Seafarer Beanie – Ember Donegal ($48). It's warm, useful, and thoughtful without being too much. Below are 9 first Christmas gifts for a new boyfriend, ranked by type, price, where he'll use them, and how often.",
+    "takeaways": [
+     "Our top pick is the Taylor Stitch Seafarer Beanie – Ember Donegal at $48. It's warm, useful, and thoughtful without being too much.",
+     "The list has 9 picks, from $26 (Stanley Classic Easy Fill Wide Mouth Flask 8 oz) to $95 (Ridge Wallet – Phantom).",
+     "Picks come from 8 makers: Buck Mason, Fellow, Leatherman, Portland Leather Goods, Ridge, Stanley 1913, Taylor Stitch, The James Brand.",
+     "We ranked on type, price, where he uses it, and how often. We don't publish ratings or review counts we haven't verified.",
+     "Every link goes straight to the maker, and every price was checked on the date shown. Prices change, so confirm at checkout."
+    ],
+    "whatis_h": "What first Christmas gifts for a new boyfriend actually are (and what they are not)",
+    "whatis": [
+     "A first Christmas gift for a new boyfriend should be thoughtful but not too much. The best ones are useful, good-looking things that show you pay attention.",
+     "It is not overly personal or overly expensive. Every pick here was under $100 when we checked."
+    ],
+    "criteria": [
+     [
+      "Type",
+      "What kind of item it is (for example drinkware, tool, apparel)."
+     ],
+     [
+      "Price",
+      "The merchant's listed price on the date we checked."
+     ],
+     [
+      "Where he uses it",
+      "Home, on the go, or both."
+     ],
+     [
+      "How often",
+      "A rough call on whether it's an everyday item or an occasional one."
+     ]
+    ],
+    "list_h": "The best first Christmas gifts for a new boyfriend in 2026",
+    "list_intro": "Picks are ordered by how safe and low-pressure they are. Everyday basics come first, then bigger gifts.",
+    "dim": "Type",
+    "best_for": {
+     "seafarer-beanie-in-ember-donegal-2611": "a safe, warm pick",
+     "napoli-card-holder": "a slim wallet upgrade",
+     "the-hardin": "an affordable pocket tool",
+     "carter-slide-mug": "the coffee commuter",
+     "mercer-cap-in-delta-blue-twill-2606": "an easy everyday cap",
+     "micra": "a first multitool",
+     "classic-easy-fill-wide-mouth-flask-8-oz": "game days",
+     "brown-corgi-ribbed-cotton-dress-sock": "a playful add-on",
+     "phantom": "the bigger gift"
+    },
+    "order": [
+     "seafarer-beanie-in-ember-donegal-2611",
+     "napoli-card-holder",
+     "the-hardin",
+     "carter-slide-mug",
+     "mercer-cap-in-delta-blue-twill-2606",
+     "micra",
+     "classic-easy-fill-wide-mouth-flask-8-oz",
+     "brown-corgi-ribbed-cotton-dress-sock",
+     "phantom"
+    ],
+    "table": {
+     "seafarer-beanie-in-ember-donegal-2611": [
+      "Hat",
+      "Outdoors",
+      "Daily"
+     ],
+     "napoli-card-holder": [
+      "Wallet",
+      "Pocket",
+      "Daily"
+     ],
+     "the-hardin": [
+      "Tool",
+      "Pocket",
+      "Daily"
+     ],
+     "carter-slide-mug": [
+      "Drinkware",
+      "On the go",
+      "Daily"
+     ],
+     "mercer-cap-in-delta-blue-twill-2606": [
+      "Hat",
+      "Outdoors",
+      "Weekly"
+     ],
+     "micra": [
+      "Tool",
+      "Keys",
+      "Daily"
+     ],
+     "classic-easy-fill-wide-mouth-flask-8-oz": [
+      "Drinkware",
+      "On the go",
+      "Occasional"
+     ],
+     "brown-corgi-ribbed-cotton-dress-sock": [
+      "Apparel",
+      "Both",
+      "Weekly"
+     ],
+     "phantom": [
+      "Wallet",
+      "Pocket",
+      "Daily"
+     ]
+    },
+    "fit_h": "Which pick fits him",
+    "usecase": [
+     [
+      "You've been dating a few weeks",
+      "Taylor Stitch Seafarer Beanie",
+      "Buck Mason Corgi Dress Sock"
+     ],
+     [
+      "He drinks coffee",
+      "Fellow Carter Slide Mug",
+      "Taylor Stitch Mercer Cap"
+     ],
+     [
+      "He carries a lot",
+      "Portland Leather Napoli Card Holder",
+      "Ridge Wallet – Phantom"
+     ],
+     [
+      "He's handy",
+      "The James Brand Hardin",
+      "Leatherman Micra"
+     ]
+    ],
+    "faq": [
+     [
+      "What is the best first Christmas gift for a new boyfriend?",
+      "Our top pick is the Taylor Stitch Seafarer Beanie in Ember Donegal at $48."
+     ],
+     [
+      "How much should I spend on a new boyfriend's first Christmas?",
+      "Most picks here are $26 to $68. The Ridge Phantom at $95 is the bigger option."
+     ],
+     [
+      "How much do these first Christmas gifts for a new boyfriend cost?",
+      "They run from $26 to $95 at the prices we checked. Confirm at checkout, since prices change."
+     ],
+     [
+      "How did you choose these picks?",
+      "We picked well-made items from established makers and ranked them on type, price, where he uses it, and how often. We don't use paid placements or made-up ratings."
+     ],
+     [
+      "Where do these gifts ship from?",
+      "Each link goes straight to the maker (Buck Mason, Fellow, Leatherman, Portland Leather Goods, Ridge, Stanley 1913, Taylor Stitch, The James Brand). Shipping and returns are handled by that merchant."
+     ],
+     [
+      "What if he doesn't like it?",
+      "Returns go through the merchant you buy from. Check their return policy before you order, especially around the holidays."
+     ]
+    ],
+    "cta": "If you only buy one thing, make it the beanie. It's warm and useful without saying too much."
+   }
   }
  ]
 }
