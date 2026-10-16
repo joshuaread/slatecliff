@@ -85,7 +85,16 @@ def card(g):
   <h3>{e(g['title'])}</h3>
 </a>'''
 
+def img_src(u, w):
+    return u + ('&' if '?' in u else '?') + f'width={w}'
+
 def tile(p):
+    if p.get('image'):
+        u = p['image']
+        return (f'<div class="pimg has-img" style="background:#fff"><img src="{e(img_src(u, 800))}" '
+                f'srcset="{e(img_src(u, 400))} 400w, {e(img_src(u, 800))} 800w, {e(img_src(u, 1200))} 1200w" '
+                f'sizes="(max-width:640px) 92vw, 46vw" width="800" height="800" loading="lazy" decoding="async" '
+                f'alt="{e(p["name"])}, product photo from {e(p["merchant"])}"></div>')
     return f'<div class="pimg" style="background:{tone(p["id"])}" aria-hidden="true"><span class="pm">{e(p["merchant"])}</span><span class="pn">{e(p["name"])}</span></div>'
 
 def write(path, s):
