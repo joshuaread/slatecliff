@@ -44,6 +44,7 @@ def page(path, title, desc, body, extra_head='', og_type='website', og_img=None,
 <meta property="og:image" content="{e(img_src(og_img, 1200))}">
 <meta property="og:image:alt" content="{e(og_alt)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:image" content="{e(img_src(og_img, 1200))}">
 <meta name="twitter:image:alt" content="{e(og_alt)}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -235,7 +236,7 @@ for g in G:
 {newsletter()}
 <section class="wrap"><p class="eyebrow">Keep browsing</p><div class="ggrid">{others}</div></section>'''
     desc = (g['best']['intro'] if g.get('best') else g['intro'])[:155].rsplit(' ', 1)[0] + '…'
-    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", f"{g.get('best', {}).get('h1', g['title'])} | SlateCliff", desc, body, head, 'article', lead(g)['image'], alt(lead(g))))
+    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", g.get('best', {}).get('title_tag') or f"{g.get('best', {}).get('h1', g['title'])} | SlateCliff", desc, body, head, 'article', lead(g)['image'], alt(lead(g))))
 
 # Guides index
 def section(id_, label, opts, key):
@@ -278,7 +279,7 @@ body = f'''<section class="hero">
   <div><p class="eyebrow">03</p><h3>Honest prices</h3><p>We checked every price on {CHECKED}. Prices change, so confirm at checkout.</p></div>
 </section>
 {newsletter()}'''
-write('/', page('/', "SlateCliff | Small gifts he'll actually keep", 'Curated gift guides for the men in your life: husbands, boyfriends, dads. Short lists of well-made gifts from trusted makers, by occasion, budget, and type of guy.', body))
+write('/', page('/', "SlateCliff | Small gifts he'll actually keep", 'Curated gift guides for husbands, boyfriends, and dads: short lists of well-made gifts from trusted makers, by occasion, budget, and type of guy.', body))
 
 # Static pages
 def simple(path, title, desc, h1, html_body):
