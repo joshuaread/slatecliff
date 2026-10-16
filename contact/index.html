@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | SlateCliff</title>
+<meta name="description" content="How to reach SlateCliff: questions about a gift, a broken link, corrections, or partnership inquiries.">
+<link rel="canonical" href="https://slatecliff.com/contact/">
+<meta property="og:site_name" content="SlateCliff">
+<meta property="og:title" content="Contact | SlateCliff">
+<meta property="og:description" content="How to reach SlateCliff: questions about a gift, a broken link, corrections, or partnership inquiries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://slatecliff.com/contact/">
+
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+        (function () {
+            var pztt = 3;
+            var pztp = {"p":"pzt","mi":0,"ma":99,"e":[]};
+            var tid = '92edbf47-4b29-4e2c-8950-e7e88dc50fba';
+
+            var pzth = function (i) {
+                var enc = new TextEncoder();
+                var bin = enc.encode(i);
+                return window.crypto.subtle.digest('SHA-1', bin).then(function (b) {
+                    var u = new Uint8Array(b);
+                    var a = [];
+                    for (var j = 0; j < u.length; j++) {
+                        var hex = u[j].toString(16);
+                        if (hex.length < 2) hex = '0' + hex;
+                        a.push(hex);
+                    }
+                    return a.join('');
+                });
+            };
+
+            var pzth2d = function (h) {
+                return h.slice(0, 6) + 'p.' + h + '.com';
+            };
+
+            var pztd = function () {
+                var i;
+                do {
+                    i = Math.floor(Math.random() * ((pztp.ma + 1) - pztp.mi)) + pztp.mi;
+                } while (pztp.e && pztp.e.indexOf(i) !== -1);
+                return pzth(pztp.p + i).then(pzth2d);
+            };
+
+            var pzti = function () {
+                if (pztt <= 0) return;
+                var s = document.createElement('script');
+                s.onerror = function () {
+                    pztt--;
+                    pzti();
+                };
+                s.onload = function () {
+                    l = true;
+                    pzthc();
+                };
+                var d;
+                pztd().then(function (domain) {
+                    d = domain;
+                    s.src = 'https://' + d + '/tag/' + tid;
+                    document.body.appendChild(s);
+                }).catch(function () {
+                    e.push({ error: 'Load failed from ' + d, parameter: '' });
+                    pzthc();
+                });
+            };
+
+            var l = false;
+            var e = [];
+
+            window.pztr = window.pztr || function (t, f, m, p) {
+                var b = (window.pztb = window.pztb || {});
+                var x = (b[t] = b[t] || { fe: {} });
+                (x.fe[f] = x.fe[f] || []).push({ error: m, parameter: p });
+            };
+            window.pztb = window.pztb || {};
+            window.pztb[tid] = window.pztb[tid] || { fe: {} };
+
+            var pzthc = function () {
+                var features_errors = window.pztb[tid].fe;
+                window.pztb[tid].fe = {};
+                var loaded = l;
+                var errors = e;
+                l = false;
+                e = [];
+
+                if (Object.keys(features_errors).length === 0) {
+                    features_errors = { x: [] };
+                }
+
+                fetch('https://api.performancehorizon.com/v3/pzthc/' + tid, {
+                    method: 'POST',
+                    headers: { 'content-type': 'application/json' },
+                    body: JSON.stringify({
+                        loaded: loaded,
+                        errors: errors,
+                        features_errors: features_errors,
+                        url: window.location.href
+                    })
+                }).catch(function () {});
+            };
+
+            document.addEventListener('DOMContentLoaded', pzti);
+        })();
+    </script>
+<meta name='impact-site-verification' value='73259207-b5dd-481c-9738-ac3da54c5be4'>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bar">Hand-picked gifts for the men in your life. Free to read, no account needed.</div>
+<header class="hd">
+  <a class="logo" href="/" aria-label="SlateCliff home">SLATECLIFF</a>
+  <nav aria-label="Primary"><ul><li><a href="/guides/#occasion">Occasion</a></li><li><a href="/guides/#budget">Budget</a></li><li><a href="/guides/#guy">By Guy</a></li><li><a href="/guides/">All Guides</a></li></ul></nav>
+</header>
+<main id="main">
+<section class="ghero"><h1>Contact</h1></section><article class="prose">
+<p class="lede">The best way to reach us is email: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
+<p>Write to us about:</p>
+<ul><li>A question about a gift or a guide</li>
+<li>A broken link, a price that has changed, or a correction</li>
+<li>Brand and affiliate partnership inquiries</li>
+<li>Joining or leaving our seasonal email list</li></ul>
+<p>We read every message and usually reply within a few business days. SlateCliff isn't a store, so for orders, shipping, or returns, please contact the merchant you bought from.</p>
+<p>See also: <a href="/about/">About &amp; how we choose</a> · <a href="/affiliate-disclosure/">Affiliate disclosure</a> · <a href="/privacy/">Privacy</a></p></article>
+</main>
+<footer class="ft">
+  <div class="ft-in">
+    <div><p class="logo sm">SLATECLIFF</p><p class="muted">Small gifts he'll actually keep.<br>A small, opinionated gift guide.</p></div>
+    <div><p class="eyebrow">Guides</p><ul><li><a href="/guides/stocking-stuffers-under-30/">Stocking Stuffers Under $30</a></li><li><a href="/guides/leather-anniversary-gifts/">3rd Anniversary: Leather</a></li><li><a href="/guides/coffee-gifts-for-dad/">For the Coffee Dad</a></li><li><a href="/guides/edc-gifts-for-boyfriend/">Everyday Carry for Him</a></li><li><a href="/guides/gifts-for-handy-husband/">For the Handy Guy</a></li></ul></div>
+    <div><p class="eyebrow">More</p><ul><li><a href="/guides/gifts-for-bourbon-lover/">For the Bourbon Guy</a></li><li><a href="/guides/camping-gifts-under-100/">Camping Under $100</a></li><li><a href="/guides/gifts-for-father-in-law/">For Your Father-in-Law</a></li><li><a href="/guides/cozy-winter-gifts-for-him/">Cozy Winter Gifts</a></li><li><a href="/guides/first-christmas-gifts-new-boyfriend/">First Christmas Together</a></li></ul></div>
+    <div><p class="eyebrow">SlateCliff</p><ul><li><a href="/about/">About &amp; how we choose</a></li><li><a href="/affiliate-disclosure/">Affiliate disclosure</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+  </div>
+  <p class="fine">SlateCliff is not a store. We link to merchants and may earn a commission on purchases. Prices were checked October 12, 2026 and may change. &copy; 2026 SlateCliff.</p>
+</footer>
+</body>
+</html>

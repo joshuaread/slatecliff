@@ -61,7 +61,7 @@ def page(path, title, desc, body, extra_head='', og_type='website'):
     <div><p class="logo sm">SLATECLIFF</p><p class="muted">{TAG}<br>A small, opinionated gift guide.</p></div>
     <div><p class="eyebrow">Guides</p><ul>{''.join(f'<li><a href="/guides/{g["slug"]}/">{e(g["short"])}</a></li>' for g in D["guides"][:5])}</ul></div>
     <div><p class="eyebrow">More</p><ul>{''.join(f'<li><a href="/guides/{g["slug"]}/">{e(g["short"])}</a></li>' for g in D["guides"][5:])}</ul></div>
-    <div><p class="eyebrow">SlateCliff</p><ul><li><a href="/about/">About &amp; how we choose</a></li><li><a href="/affiliate-disclosure/">Affiliate disclosure</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:hello@slatecliff.com">Contact</a></li></ul></div>
+    <div><p class="eyebrow">SlateCliff</p><ul><li><a href="/about/">About &amp; how we choose</a></li><li><a href="/affiliate-disclosure/">Affiliate disclosure</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/contact/">Contact</a></li></ul></div>
   </div>
   <p class="fine">SlateCliff is not a store. We link to merchants and may earn a commission on purchases. Prices were checked {CHECKED} and may change. &copy; 2026 SlateCliff.</p>
 </footer>
@@ -71,8 +71,8 @@ def page(path, title, desc, body, extra_head='', og_type='website'):
 def newsletter():
     return '''<section class="news" aria-labelledby="news-h">
   <p class="eyebrow">The Short List</p>
-  <h2 id="news-h">A newsletter is coming soon.</h2>
-  <p>A short note before each gift season with new picks and shipping cutoffs. We aren't collecting sign-ups on the site yet. If you'd like a heads-up when it launches, email us and we'll add you by hand.</p>
+  <h2 id="news-h">Get a note before each gift season.</h2>
+  <p>A short email before the holidays and other gift seasons with new picks and shipping cutoffs. Email us and we'll add you to the list by hand; ask any time and we'll take you off.</p>
   <a class="btn ghost" href="mailto:hello@slatecliff.com?subject=Add%20me%20to%20The%20Short%20List">Email to join the list</a>
 </section>'''
 
@@ -254,17 +254,28 @@ simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collec
 <h2>What we collect</h2>
 <p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. We don't currently run analytics or set cookies of our own.</p>
 <h2>Affiliate tracking</h2>
-<p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. Partnerize and the merchants may set cookies or use similar technologies to do this. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>.</p>
+<p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. We may also use other affiliate networks, such as impact.com, for merchant links. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
 <h2>Newsletter</h2>
 <p>We don't collect newsletter sign-ups on the site yet. If you email us to join, we use your address only to send the newsletter, and you can ask us to remove it at any time.</p>
 <h2>Merchant links</h2>
 <p>When you click through to a merchant, that merchant's own privacy policy applies, along with any affiliate network involved. Those parties may use cookies to credit a purchase.</p>
+<h2>Your choices</h2>
+<p>You can block or clear cookies in your browser settings. To ask about or remove any email address you've sent us, write to <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
 <h2>Changes and contact</h2>
 <p>If this policy changes, we'll update this page. Last updated {CHECKED}. Questions: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
+simple('/contact/', 'Contact', 'How to reach SlateCliff: questions about a gift, a broken link, corrections, or partnership inquiries.', 'Contact', '''
+<p class="lede">The best way to reach us is email: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
+<p>Write to us about:</p>
+<ul><li>A question about a gift or a guide</li>
+<li>A broken link, a price that has changed, or a correction</li>
+<li>Brand and affiliate partnership inquiries</li>
+<li>Joining or leaving our seasonal email list</li></ul>
+<p>We read every message and usually reply within a few business days. SlateCliff isn't a store, so for orders, shipping, or returns, please contact the merchant you bought from.</p>
+<p>See also: <a href="/about/">About &amp; how we choose</a> · <a href="/affiliate-disclosure/">Affiliate disclosure</a> · <a href="/privacy/">Privacy</a></p>''')
 write('/404.html', page('/404.html', 'Page not found | SlateCliff', 'Page not found.', '<section class="ghero"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. <a href="/guides/">Browse the guides</a> instead.</p></section>'))
 
 # sitemap / robots
-urls = ['/', '/guides/'] + [f"/guides/{g['slug']}/" for g in G] + ['/about/', '/affiliate-disclosure/', '/privacy/']
+urls = ['/', '/guides/'] + [f"/guides/{g['slug']}/" for g in G] + ['/about/', '/contact/', '/affiliate-disclosure/', '/privacy/']
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>2026-10-12</lastmod></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
 print('built', len(urls), 'pages')
