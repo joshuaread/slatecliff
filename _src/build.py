@@ -18,12 +18,15 @@ GUY = [('husband', 'Husband'), ('boyfriend', 'Boyfriend'), ('dad', 'Dad & father
 GUY_EXTRA = {'husband': ['gifts-for-handy-husband'], 'boyfriend': ['edc-gifts-for-boyfriend'], 'dad': ['coffee-gifts-for-dad']}
 TONES = ['#e9e5de', '#e2ddd4', '#dcd6cc', '#ece9e3', '#d9d4cb', '#e6e1d8']
 
+_hp = P['maritime-shirt-jacket-in-heather-olive-wool-2610']
+HOME_OG = (_hp['image'], f"{_hp['name']}, product photo from {_hp['merchant']}")
 def tone(s): return TONES[int(hashlib.md5(s.encode()).hexdigest(), 16) % len(TONES)]
 def money(v): return f"${v:,.2f}".replace('.00', '')
 def link(p): return p.get('affiliate_url') or p['url']
 
-def page(path, title, desc, body, extra_head='', og_type='website'):
+def page(path, title, desc, body, extra_head='', og_type='website', og_img=None, og_alt=''):
     url = SITE + path
+    og_img = og_img or HOME_OG[0]; og_alt = og_alt or HOME_OG[1]
     nav = ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in [('/guides/#occasion', 'Occasion'), ('/guides/#budget', 'Budget'), ('/guides/#guy', 'By Guy'), ('/guides/', 'All Guides')])
     return f'''<!doctype html>
 <html lang="en">
@@ -38,8 +41,11 @@ def page(path, title, desc, body, extra_head='', og_type='website'):
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{url}">
-
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{e(img_src(og_img, 1200))}">
+<meta property="og:image:alt" content="{e(og_alt)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{e(img_src(og_img, 1200))}">
+<meta name="twitter:image:alt" content="{e(og_alt)}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 {PZ_TAG}
@@ -76,11 +82,24 @@ def newsletter():
   <a class="btn ghost" href="mailto:hello@slatecliff.com?subject=Add%20me%20to%20The%20Short%20List">Email to join the list</a>
 </section>'''
 
-def card(g):
+def order(g): return [P[i] for i in (g['best']['order'] if g.get('best') else g['picks'])]
+def lead(g): return order(g)[0]
+def alt(p): return f"{p['name']}, product photo from {p['merchant']}"
+def im(p, w, sizes, lazy=True, cls='', alt_txt=None, hi=False):
+    u = p['image']
+    a = alt(p) if alt_txt is None else alt_txt
+    ld = 'loading="lazy" ' if lazy else ('fetchpriority="high" ' if hi else '')
+    return (f'<img{" class=" + chr(34) + cls + chr(34) if cls else ""} src="{e(img_src(u, w))}" srcset="{e(img_src(u, 300))} 300w, {e(img_src(u, 600))} 600w, {e(img_src(u, 900))} 900w" '
+            f'sizes="{sizes}" width="{w}" height="{w}" {ld}decoding="async" alt="{e(a)}">')
+def collage(ps, sizes, lazy=True, hi=False):
+    a, b, c = ps[:3]
+    return (f'<div class="clg">{im(a, 600, sizes, lazy, "c1", hi=hi)}{im(b, 300, "(max-width:640px) 45vw, 12vw", lazy, "c2")}{im(c, 300, "(max-width:640px) 45vw, 12vw", lazy, "c3")}</div>')
+
+def card(g, lazy=True):
     ps = [P[i] for i in g['picks']]
     lo, hi = min(p['price'] for p in ps), max(p['price'] for p in ps)
     return f'''<a class="gcard" href="/guides/{g['slug']}/">
-  <div class="gimg" style="background:{tone(g['slug'])}"><span>{e(g['short'])}</span></div>
+  <div class="gimg has-img">{collage(order(g), "(max-width:900px) 46vw, 22vw", lazy)}</div>
   <p class="eyebrow">{len(ps)} picks · {money(lo)}–{money(hi)}</p>
   <h3>{e(g['title'])}</h3>
 </a>'''
@@ -104,6 +123,9 @@ def write(path, s):
 
 G = D['guides']; BY = {g['slug']: g for g in G}
 DISC = f'<p class="ftc"><strong>Disclosure:</strong> SlateCliff may earn a commission if you buy through links on this page, at no extra cost to you. <a href="/affiliate-disclosure/">Learn more</a>.</p>'
+
+def strip(ps, lazy=True, n=None):
+    return '<div class="strip">' + ''.join(f'<figure>{im(p, 600, "(max-width:640px) 31vw, 300px", lazy, hi=(not lazy and k==0))}</figure>' for k, p in enumerate(ps)) + '</div>'
 
 # "Best X" playbook layout (used when a guide has a "best" block)
 def best_body(g):
@@ -133,6 +155,7 @@ def best_body(g):
   <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published {e(b.get('published', CHECKED))} · Updated {e(b['updated'])}</p>
   <p class="lede">{e(b['intro'])}</p>
   <p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">See our #1 pick: {e(top['name'])} ({money(top['price'])})</a></p>
+  {strip(ps[:3], lazy=False)}
 </section>
 <article class="prose">
 <h2>Key takeaways</h2><ul>{''.join(f'<li>{e(t)}</li>' for t in b['takeaways'])}</ul>
@@ -178,12 +201,13 @@ for g in G:
   <h1>{e(g['title'])}</h1>
   <p class="lede">{e(g['intro'])}</p>
   <p class="muted small">{len(ps)} picks · Prices checked {CHECKED} · Every link goes straight to the merchant.</p>
+  {strip(ps[:3], lazy=False)}
 </section>
 <ol class="picks">{items}</ol>
 {newsletter()}
 <section class="wrap"><p class="eyebrow">Keep browsing</p><div class="ggrid">{others}</div></section>'''
     desc = (g['best']['intro'] if g.get('best') else g['intro'])[:155].rsplit(' ', 1)[0] + '…'
-    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", f"{g.get('best', {}).get('h1', g['title'])} | SlateCliff", desc, body, head, 'article'))
+    write(f"/guides/{g['slug']}/", page(f"/guides/{g['slug']}/", f"{g.get('best', {}).get('h1', g['title'])} | SlateCliff", desc, body, head, 'article', lead(g)['image'], alt(lead(g))))
 
 # Guides index
 def section(id_, label, opts, key):
@@ -194,17 +218,19 @@ def section(id_, label, opts, key):
         rows += f'<h3 class="subh" id="{key}-{k}">{e(t)}</h3><ul class="list">' + ''.join(f'<li><a href="/guides/{x["slug"]}/">{e(x["title"])}</a></li>' for x in gs) + '</ul>'
     return f'<section class="wrap idx" id="{id_}"><p class="eyebrow">Browse</p><h2>{label}</h2>{rows}</section>'
 body = f'''<section class="ghero"><p class="eyebrow">All guides</p><h1>The guides</h1><p class="lede">Ten short lists, each built around one kind of guy or one occasion. No 100-item roundups.</p></section>
-<section class="wrap"><div class="ggrid">{''.join(card(g) for g in G)}</div></section>
+<section class="wrap"><div class="ggrid">{''.join(card(g, k >= 4) for k, g in enumerate(G))}</div></section>
 {section('occasion', 'By occasion', OCC, 'occasion')}{section('budget', 'By budget', BUD, 'budget')}{section('guy', 'By type of guy', GUY, 'guy')}
 {newsletter()}'''
-write('/guides/', page('/guides/', 'All Gift Guides for Him | SlateCliff', 'Every SlateCliff gift guide for him, by occasion, budget, and type of guy. Short, curated lists that link straight to the maker.', body))
+write('/guides/', page('/guides/', 'All Gift Guides for Him | SlateCliff', 'Every SlateCliff gift guide for him, by occasion, budget, and type of guy. Short, curated lists that link straight to the maker.', body, og_img=lead(G[0])['image'], og_alt=alt(lead(G[0]))))
 
 # Home
+HERO_PS = [lead(BY[s]) for s in ['cozy-winter-gifts-for-him', 'leather-anniversary-gifts', 'coffee-gifts-for-dad', 'edc-gifts-for-boyfriend']]
+HERO = '<div class="hgrid">' + ''.join(im(p, 600, '(max-width:640px) 50vw, 27vw', False, hi=(k == 0)) for k, p in enumerate(HERO_PS)) + '</div>'
 feat = ['first-christmas-gifts-new-boyfriend', 'stocking-stuffers-under-30', 'coffee-gifts-for-dad', 'cozy-winter-gifts-for-him']
 def chips(opts, key):
     return ''.join(f'<li><a href="/guides/#{key}-{k}">{e(t)}</a></li>' for k, t in opts if any(g[key] == k for g in G) or (key == 'guy' and k in GUY_EXTRA))
 body = f'''<section class="hero">
-  <div class="hero-img" aria-hidden="true"></div>
+  <div class="hero-img has-img">{HERO}</div>
   <div class="hero-txt">
     <p class="eyebrow">Gift guides for the men in your life</p>
     <h1>{TAG}</h1>
@@ -228,7 +254,8 @@ write('/', page('/', "SlateCliff | Small gifts he'll actually keep", 'Curated gi
 
 # Static pages
 def simple(path, title, desc, h1, html_body):
-    write(path, page(path, title + ' | SlateCliff', desc, f'<section class="ghero"><h1>{h1}</h1></section><article class="prose">{html_body}</article>'))
+    extra = strip([lead(g) for g in G[:4]], lazy=True) if path in ('/about/', '/contact/') else ''
+    write(path, page(path, title + ' | SlateCliff', desc, f'<section class="ghero"><h1>{h1}</h1></section><article class="prose">{html_body}{extra}</article>'))
 simple('/about/', 'About & How We Choose', 'What SlateCliff is, who it is for, and how we choose the gifts in our guides.', 'About SlateCliff', f'''
 <p class="lede">SlateCliff is a small gift guide for women buying for the men in their lives: husbands, boyfriends, dads, fathers-in-law, brothers.</p>
 <p>Most gift lists are endless roundups. We'd rather give you a short list of well-made things for one specific guy or one specific occasion, say plainly who each one suits, and send you straight to the maker.</p>
@@ -272,7 +299,7 @@ simple('/contact/', 'Contact', 'How to reach SlateCliff: questions about a gift,
 <li>Joining or leaving our seasonal email list</li></ul>
 <p>We read every message and usually reply within a few business days. SlateCliff isn't a store, so for orders, shipping, or returns, please contact the merchant you bought from.</p>
 <p>See also: <a href="/about/">About &amp; how we choose</a> · <a href="/affiliate-disclosure/">Affiliate disclosure</a> · <a href="/privacy/">Privacy</a></p>''')
-write('/404.html', page('/404.html', 'Page not found | SlateCliff', 'Page not found.', '<section class="ghero"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. <a href="/guides/">Browse the guides</a> instead.</p></section>'))
+write('/404.html', page('/404.html', 'Page not found | SlateCliff', 'Page not found.', '<section class="ghero"><h1>Page not found</h1><p class="lede">That page doesn\'t exist. <a href="/guides/">Browse the guides</a> instead.</p></section><section class="wrap"><p class="eyebrow">Popular guides</p><div class="ggrid">' + ''.join(card(BY[s]) for s in ['first-christmas-gifts-new-boyfriend', 'stocking-stuffers-under-30', 'coffee-gifts-for-dad', 'cozy-winter-gifts-for-him']) + '</div></section>'))
 
 # sitemap / robots
 urls = ['/', '/guides/'] + [f"/guides/{g['slug']}/" for g in G] + ['/about/', '/contact/', '/affiliate-disclosure/', '/privacy/']
