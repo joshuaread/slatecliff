@@ -127,6 +127,36 @@ DISC = f'<p class="ftc"><strong>Disclosure:</strong> SlateCliff may earn a commi
 def strip(ps, lazy=True, n=None):
     return '<div class="strip">' + ''.join(f'<figure>{im(p, 600, "(max-width:640px) 31vw, 300px", lazy, hi=(not lazy and k==0))}</figure>' for k, p in enumerate(ps)) + '</div>'
 
+
+from datetime import datetime
+def iso(d): return datetime.strptime(d, '%B %d, %Y').date().isoformat()
+def guide_ld(g, ps):
+    """Structured data for AI Overviews / rich results. Only facts already on the page: no ratings or reviews."""
+    url = f"{SITE}/guides/{g['slug']}/"; b = g.get('best') or {}
+    name = b.get('h1', g['title']); ordered = order(g)
+    org = {"@type": "Organization", "@id": SITE + "/#org", "name": "SlateCliff", "url": SITE + "/"}
+    items = [{"@type": "ListItem", "position": n, "url": f"{url}#{p['id']}", "item": {
+        "@type": "Product", "name": p['name'], "image": img_src(p['image'], 1200) if p.get('image') else None,
+        "description": p['why'], "brand": {"@type": "Brand", "name": p['merchant']},
+        "offers": {"@type": "Offer", "price": f"{p['price']:.2f}", "priceCurrency": "USD", "url": link(p),
+                   "seller": {"@type": "Organization", "name": p['merchant']}}}} for n, p in enumerate(ordered, 1)]
+    for it in items:
+        if not it['item']['image']: del it['item']['image']
+    graph = [org,
+        {"@type": "Article", "@id": url + "#article", "headline": name, "url": url, "mainEntityOfPage": url,
+         "datePublished": iso(b.get('published', CHECKED)), "dateModified": iso(b.get('updated', CHECKED)),
+         "author": org, "publisher": org, "image": img_src(ordered[0]['image'], 1200), "about": {"@id": url + "#list"}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": SITE + "/guides/"},
+            {"@type": "ListItem", "position": 3, "name": g['short'], "item": url}]},
+        {"@type": "ItemList", "@id": url + "#list", "name": name, "url": url, "numberOfItems": len(ordered),
+         "itemListOrder": "https://schema.org/ItemListOrderAscending", "itemListElement": items}]
+    if b.get('faq'):
+        graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in b['faq']]})
+    return {"@context": "https://schema.org", "@graph": graph}
+
 # "Best X" playbook layout (used when a guide has a "best" block)
 def best_body(g):
     b = g['best']; ps = [P[i] for i in b['order']]; top = ps[0]
@@ -152,7 +182,7 @@ def best_body(g):
 <section class="ghero">
   <p class="eyebrow"><a href="/guides/">Guides</a> / {e(g['short'])}</p>
   <h1>{e(b['h1'])}</h1>
-  <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published {e(b.get('published', CHECKED))} · Updated {e(b['updated'])}</p>
+  <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published <time datetime="{iso(b.get('published', CHECKED))}">{e(b.get('published', CHECKED))}</time> · Updated <time datetime="{iso(b['updated'])}">{e(b['updated'])}</time></p>
   <p class="lede">{e(b['intro'])}</p>
   <p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">See our #1 pick: {e(top['name'])} ({money(top['price'])})</a></p>
   {strip(ps[:3], lazy=False)}
@@ -189,9 +219,7 @@ for g in G:
     <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
   </div>
 </li>'''
-    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": g.get('best', {}).get('h1', g['title']), "url": f"{SITE}/guides/{g['slug']}/", "numberOfItems": len(ps),
-          "itemListElement": [{"@type": "ListItem", "position": n, "name": p['name'], "url": link(p)} for n, p in enumerate([P[i] for i in g['best']['order']] if g.get('best') else ps, 1)]}
-    head = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
+    head = f'<script type="application/ld+json">{json.dumps(guide_ld(g, ps), ensure_ascii=False)}</script>'
     others = ''.join(card(BY[s]) for s in [x['slug'] for x in G if x['slug'] != g['slug']][:3])
     body = best_body(g) + f'''
 {newsletter()}
@@ -303,6 +331,7 @@ write('/404.html', page('/404.html', 'Page not found | SlateCliff', 'Page not fo
 
 # sitemap / robots
 urls = ['/', '/guides/'] + [f"/guides/{g['slug']}/" for g in G] + ['/about/', '/contact/', '/affiliate-disclosure/', '/privacy/']
-open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>2026-10-12</lastmod></url>\n' for u in urls) + '</urlset>\n')
+LM = {f"/guides/{g['slug']}/": iso(g.get('best', {}).get('updated', CHECKED)) for g in G}
+open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}{u}</loc><lastmod>{LM.get(u, iso(CHECKED))}</lastmod></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
 print('built', len(urls), 'pages')
