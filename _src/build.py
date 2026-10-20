@@ -123,6 +123,7 @@ def write(path, s):
     open(f, 'w').write(s)
 
 G = D['guides']; BY = {g['slug']: g for g in G}
+TRUST = f'<ul class="trust" aria-label="Why you can trust this list"><li>Hand-picked; merchants can&#x27;t pay to be listed</li><li>Prices checked {CHECKED}</li><li>Links go straight to the merchant</li><li><a href="/affiliate-disclosure/">We may earn a commission</a> · <a href="/about/">How we pick</a></li></ul>'
 DISC = f'<p class="ftc"><strong>Disclosure:</strong> SlateCliff may earn a commission if you buy through links on this page, at no extra cost to you. <a href="/affiliate-disclosure/">Learn more</a>.</p>'
 
 def strip(ps, lazy=True, n=None):
@@ -183,9 +184,11 @@ def best_body(g):
 <section class="ghero">
   <p class="eyebrow"><a href="/guides/">Guides</a> / {e(g['short'])}</p>
   <h1>{e(b['h1'])}</h1>
+  <p class="dek">Skip the guesswork: {len(ps)} well-made gifts he'll actually use, ranked, with the one we'd buy first right up top.</p>
   <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published <time datetime="{iso(b.get('published', CHECKED))}">{e(b.get('published', CHECKED))}</time> · Updated <time datetime="{iso(b['updated'])}">{e(b['updated'])}</time></p>
   <p class="lede">{e(b['intro'])}</p>
-  <p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">See our #1 pick: {e(top['name'])} ({money(top['price'])})</a></p>
+  <p class="cta1"><span class="eyebrow">Our #1 pick</span><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}: {money(top['price'])} at {e(top['merchant'])}<span class="sr"> (opens in a new tab)</span></a></p>
+  {TRUST}
   {strip(ps[:3], lazy=False)}
 </section>
 <article class="prose">
@@ -201,7 +204,7 @@ def best_body(g):
 <h2>{e(b['fit_h'])}</h2>
 <div class="tbl"><table><thead><tr><th>If he…</th><th>Get</th><th>Or</th></tr></thead><tbody>{uc}</tbody></table></div>
 <h2>Frequently asked questions</h2>{faq}
-<h2>Get him the #1 pick</h2><p>{e(b['cta'])} It's {money(top['price'])}. It ships straight from {e(top['merchant'])}. <a href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}</a>.</p>
+<h2>Get him the #1 pick</h2><p>{e(b['cta'])} It's {money(top['price'])}. It ships straight from {e(top['merchant'])}. </p><p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])} at {e(top['merchant'])}<span class="sr"> (opens in a new tab)</span></a></p>{TRUST}
 </article>'''
 
 # Guides
@@ -254,17 +257,18 @@ write('/guides/', page('/guides/', 'All Gift Guides for Him | SlateCliff', 'Ever
 
 # Home
 HERO_PS = [lead(BY[s]) for s in ['cozy-winter-gifts-for-him', 'leather-anniversary-gifts', 'coffee-gifts-for-dad', 'edc-gifts-for-boyfriend']]
-HERO = '<div class="hgrid">' + ''.join(im(p, 600, '(max-width:640px) 50vw, 27vw', False, hi=(k == 0)) for k, p in enumerate(HERO_PS)) + '</div>'
+HERO = '<div class="hgrid">' + ''.join(im(p, 600, '(max-width:640px) 50vw, 27vw', False, hi=(k == 0)) for k, p in enumerate(HERO_PS)) + '</div><p class="hcap">Gifts he\'ll reach for every day, not stash in a drawer.</p>'
 feat = ['first-christmas-gifts-new-boyfriend', 'stocking-stuffers-under-30', 'coffee-gifts-for-dad', 'cozy-winter-gifts-for-him']
 def chips(opts, key):
     return ''.join(f'<li><a href="/guides/#{key}-{k}">{e(t)}</a></li>' for k, t in opts if any(g[key] == k for g in G) or (key == 'guy' and k in GUY_EXTRA))
 body = f'''<section class="hero">
   <div class="hero-img has-img">{HERO}</div>
   <div class="hero-txt">
-    <p class="eyebrow">Gift guides for the men in your life</p>
-    <h1>{TAG}</h1>
-    <p class="lede">Short, curated lists for husbands, boyfriends, dads, and the guy who's impossible to shop for. Well-made things from makers we trust, with real prices.</p>
-    <a class="btn" href="/guides/">Browse the guides</a>
+    <p class="eyebrow">{TAG}</p>
+    <h1>Find a gift he'll actually use, in five minutes.</h1>
+    <p class="lede">Short, ranked lists for husbands, boyfriends, dads, and the guy who's impossible to shop for. Well-made things from makers we trust, with real prices, and our #1 pick at the top of every guide.</p>
+    <p><a class="btn" href="/guides/">Find his gift</a></p>
+    {TRUST}
   </div>
 </section>
 <section class="wrap"><div class="row-h"><h2>Featured guides</h2><a class="more" href="/guides/">View all</a></div><div class="ggrid">{''.join(card(BY[s]) for s in feat)}</div></section>
