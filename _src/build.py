@@ -11,7 +11,7 @@ SITE = 'https://slatecliff.com'
 TAG = "Small gifts he'll actually keep."
 CHECKED = D['price_checked']
 PZ_TAG = open(os.path.join(ROOT, '_src', 'partnerize-tag.txt')).read().strip()  # Partnerize Partner Tag, inserted verbatim in every <head>
-GA4_ID = ''  # Set to SlateCliff's own GA4 Measurement ID (G-XXXXXXXXXX), then rebuild. Empty = no analytics tag; privacy page says no analytics.
+GA4_ID = 'G-LWW3X16HN4'  # Set to SlateCliff's own GA4 Measurement ID (G-XXXXXXXXXX), then rebuild. Empty = no analytics tag; privacy page says no analytics.
 GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA4_ID + '"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","' + GA4_ID + '");'
            'document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("a[href^=\'http\']");if(!a||a.hostname===location.hostname)return;gtag("event","outbound_click",{link_url:a.href,link_domain:a.hostname,transport_type:"beacon"});});</script>\n') if GA4_ID else ''
 PRIV_LEDE = "uses Google Analytics only to count visits and clicks." if GA4_ID else "doesn't run analytics."
