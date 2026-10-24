@@ -11,6 +11,11 @@ SITE = 'https://slatecliff.com'
 TAG = "Small gifts he'll actually keep."
 CHECKED = D['price_checked']
 PZ_TAG = open(os.path.join(ROOT, '_src', 'partnerize-tag.txt')).read().strip()  # Partnerize Partner Tag, inserted verbatim in every <head>
+GA4_ID = ''  # Set to SlateCliff's own GA4 Measurement ID (G-XXXXXXXXXX), then rebuild. Empty = no analytics tag; privacy page says no analytics.
+GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA4_ID + '"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","' + GA4_ID + '");'
+           'document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("a[href^=\'http\']");if(!a||a.hostname===location.hostname)return;gtag("event","outbound_click",{link_url:a.href,link_domain:a.hostname,transport_type:"beacon"});});</script>\n') if GA4_ID else ''
+PRIV_LEDE = "uses Google Analytics only to count visits and clicks." if GA4_ID else "doesn't run analytics."
+PRIV_GA = ('We use Google Analytics 4 to count page views and clicks to merchant sites, so we know which guides are useful. Google Analytics sets first-party cookies and receives standard technical information such as your IP address, browser, and pages visited. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>. You can opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google\'s opt-out browser add-on</a>.') if GA4_ID else "We don't currently run analytics or set cookies of our own."
 e = html.escape
 OCC = [('christmas', 'Christmas'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
 BUD = [('under-30', 'Under $30'), ('under-100', 'Under $100'), ('under-150', 'Under $150'), ('splurge', 'Worth the splurge')]
@@ -51,7 +56,7 @@ def page(path, title, desc, body, extra_head='', og_type='website', og_img=None,
 <link rel="stylesheet" href="/assets/site.css">
 {PZ_TAG}
 <meta name='impact-site-verification' value='73259207-b5dd-481c-9738-ac3da54c5be4'>
-{extra_head}
+{GA4_TAG}{extra_head}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -310,9 +315,9 @@ simple('/affiliate-disclosure/', 'Affiliate Disclosure', 'How SlateCliff makes m
 <li>Prices on our pages were checked on the date shown ({CHECKED}) and may have changed since then.</li></ul>
 <p>Questions? Email <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
 simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collect (very little) and how links to merchants work.', 'Privacy', f'''
-<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and doesn't run analytics.</p>
+<p class="lede">Short version: SlateCliff doesn't ask for your personal information, doesn't use accounts, and {PRIV_LEDE}</p>
 <h2>What we collect</h2>
-<p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. We don't currently run analytics or set cookies of our own.</p>
+<p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. {PRIV_GA}</p>
 <h2>Affiliate tracking</h2>
 <p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. We may also use other affiliate networks, such as impact.com, for merchant links. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
 <h2>Newsletter</h2>
