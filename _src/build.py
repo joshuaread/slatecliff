@@ -3,7 +3,7 @@
 To swap in affiliate links: set "affiliate_url" on a product in _src/site.json, then run
     python3 _src/build.py
 from the repo root and commit. Nothing else needs to change."""
-import json, os, html, hashlib
+import json, os, html, hashlib, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = json.load(open(os.path.join(ROOT, '_src', 'site.json')))
 P = {p['id']: p for p in D['products']}
@@ -11,6 +11,8 @@ SITE = 'https://slatecliff.com'
 TAG = "Small gifts he'll actually keep."
 CHECKED = D['price_checked']
 PZ_TAG = open(os.path.join(ROOT, '_src', 'partnerize-tag.txt')).read().strip()  # Partnerize Partner Tag, inserted verbatim in every <head>
+SOVRN_KEY = '607af82507781c6d11d22bd08343d171'  # Sovrn Commerce (VigLink) key; empty = no tag
+SOVRN_TAG = ("<script type=\"text/javascript\"> var vglnk = {key: '" + SOVRN_KEY + "'}; (function(d, t) {var s = d.createElement(t); s.type = 'text/javascript';s.async = true; s.src = '//cdn.viglink.com/api/vglnk.js'; var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r); }(document, 'script')); </script>\n") if SOVRN_KEY else ''
 GA4_ID = 'G-LWW3X16HN4'  # Set to SlateCliff's own GA4 Measurement ID (G-XXXXXXXXXX), then rebuild. Empty = no analytics tag; privacy page says no analytics.
 GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA4_ID + '"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","' + GA4_ID + '");'
            'document.addEventListener("click",function(ev){var a=ev.target.closest&&ev.target.closest("a[href^=\'http\']");if(!a||a.hostname===location.hostname)return;gtag("event","outbound_click",{link_url:a.href,link_domain:a.hostname,transport_type:"beacon"});});</script>\n') if GA4_ID else ''
@@ -77,7 +79,7 @@ def page(path, title, desc, body, extra_head='', og_type='website', og_img=None,
   </div>
   <p class="fine">SlateCliff is not a store. We link to merchants and may earn a commission on purchases. Prices were checked {CHECKED} and may change. &copy; 2026 SlateCliff.</p>
 </footer>
-</body>
+{SOVRN_TAG}</body>
 </html>'''
 
 def newsletter():
@@ -125,6 +127,7 @@ def tile(p):
 def write(path, s):
     f = os.path.join(ROOT, path.strip('/'), 'index.html') if path.endswith('/') else os.path.join(ROOT, path.strip('/'))
     os.makedirs(os.path.dirname(f), exist_ok=True)
+    s = re.sub(r'<a ([^>]*href="https://www\.awin1\.com[^"]*"[^>]*)>', lambda m: '<a ' + (m.group(1).replace('class="', 'class="norewrite ', 1) if 'class="' in m.group(1) else 'class="norewrite" ' + m.group(1)) + '>', s)  # keep direct AWIN links out of Sovrn rewriting
     open(f, 'w').write(s)
 
 G = D['guides']; BY = {g['slug']: g for g in G}
@@ -319,7 +322,7 @@ simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collec
 <h2>What we collect</h2>
 <p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. {PRIV_GA}</p>
 <h2>Affiliate tracking</h2>
-<p>Our pages include the Partnerize partner tag, which helps credit purchases you make through our merchant links. We may also use other affiliate networks, such as impact.com, for merchant links. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
+<p>Our pages include the Partnerize partner tag and the Sovrn Commerce script, which helps credit purchases you make through our merchant links. We may also use other affiliate networks, such as impact.com, for merchant links. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>, <a href="https://www.sovrn.com/legal/privacy-policy/" rel="noopener">Sovrn's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
 <h2>Newsletter</h2>
 <p>We don't collect newsletter sign-ups on the site yet. If you email us to join, we use your address only to send the newsletter, and you can ask us to remove it at any time.</p>
 <h2>Merchant links</h2>
