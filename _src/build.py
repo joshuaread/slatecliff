@@ -145,13 +145,10 @@ def guide_ld(g, ps):
     url = f"{SITE}/guides/{g['slug']}/"; b = g.get('best') or {}
     name = b.get('h1', g['title']); ordered = order(g)
     org = {"@type": "Organization", "@id": SITE + "/#org", "name": "SlateCliff", "url": SITE + "/"}
-    items = [{"@type": "ListItem", "position": n, "url": f"{url}#{p['id']}", "item": {
-        "@type": "Product", "name": p['name'], "image": img_src(p['image'], 1200) if p.get('image') else None,
-        "description": p['why'], "brand": {"@type": "Brand", "name": p['merchant']},
-        "offers": {"@type": "Offer", "price": f"{p['price']:.2f}", "priceCurrency": "USD", "url": link(p),
-                   "seller": {"@type": "Organization", "name": p['merchant']}}}} for n, p in enumerate(ordered, 1)]
+    items = [{"@type": "ListItem", "position": n, "url": f"{url}#{p['id']}", "name": p['name'],
+              "image": img_src(p['image'], 1200) if p.get('image') else None} for n, p in enumerate(ordered, 1)]
     for it in items:
-        if not it['item']['image']: del it['item']['image']
+        if not it['image']: del it['image']
     graph = [org,
         {"@type": "Article", "@id": url + "#article", "headline": name, "url": url, "mainEntityOfPage": url,
          "datePublished": iso(b.get('published', CHECKED)), "dateModified": iso(b.get('updated', CHECKED)),
