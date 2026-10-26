@@ -3228,7 +3228,7 @@
    "slug": "last-minute-christmas-gifts-for-him",
    "title": "Last-Minute Christmas Gifts for Him, With 2026 Shipping Dates",
    "short": "Last-Minute Christmas",
-   "intro": "Our top last-minute Christmas gift for him is the Taylor Stitch Seafarer Beanie ($48). Taylor Stitch says in-stock orders ship within 2 business days and most arrive within 3 business days after that. Below are 8 last-minute Christmas gifts for him, from $17 to $129.95, sorted by how fast each maker says standard orders arrive. For delivery before December 25, USPS recommends shipping Ground Advantage by December 17.",
+   "intro": "Our top last-minute Christmas gift for him is the Taylor Stitch Seafarer Beanie ($48). Taylor Stitch says in-stock orders ship within 2 business days and most arrive within 3 business days after that, though it asks you to allow 5-10. Below are 8 last-minute Christmas gifts for him, from $17 to $129.95, with each maker's stated shipping times. For delivery before December 25, USPS recommends shipping Ground Advantage by December 17.",
    "picks": [
     "seafarer-beanie-in-natural-donegal-2611",
     "the-hardin",
@@ -3248,10 +3248,10 @@
     "published": "October 26, 2026",
     "updated": "October 26, 2026",
     "rechecked": "October 26, 2026",
-    "intro": "Our top last-minute Christmas gift for him is the Taylor Stitch Seafarer Beanie ($48). Taylor Stitch says in-stock orders ship within 2 business days and most arrive within 3 business days after that. Below are 8 last-minute Christmas gifts for him, from $17 to $129.95, sorted by how fast each maker says standard orders arrive. For delivery before December 25, USPS recommends shipping Ground Advantage by December 17.",
+    "intro": "Our top last-minute Christmas gift for him is the Taylor Stitch Seafarer Beanie ($48). Taylor Stitch says in-stock orders ship within 2 business days and most arrive within 3 business days after that, though it asks you to allow 5-10. Below are 8 last-minute Christmas gifts for him, from $17 to $129.95, with each maker's stated shipping times. For delivery before December 25, USPS recommends shipping Ground Advantage by December 17.",
     "takeaways": [
      "USPS recommends sending Ground Advantage packages by Thursday, December 17, 2026, and Priority Mail by Friday, December 18, for delivery before December 25 in the lower 48 states. Those are carrier dates, so the maker has to ship your order by then.",
-     "Our top pick is the Taylor Stitch Seafarer Beanie at $48. Of the makers on this list, Taylor Stitch posts the shortest standard timeline: up to 2 business days to ship, then most orders arrive within 3 business days.",
+     "Our top pick is the Taylor Stitch Seafarer Beanie at $48. Of the makers on this list, Taylor Stitch posts the shortest standard timeline: up to 2 business days to ship, then most orders arrive within 3 business days, though it asks you to allow 5-10.",
      "None of the 8 makers on this list had posted a 2026 holiday order cutoff when we checked on October 26, 2026. We don't guess at cutoffs, so check each maker's shipping page before you order.",
      "If you're ordering late, pay for faster shipping where the maker offers it. Leatherman, The James Brand, Buck Mason, and Filson each list a 2- to 3-day option on their shipping pages.",
      "The list has 8 picks, from $17 (Fellow Companion Blend) to $129.95 (Leatherman Wave Plus). Every price was checked on October 12 and rechecked on October 26, 2026, and every pick was in stock."
@@ -3312,13 +3312,8 @@
         "Dec. 24"
        ],
        [
-        "UPS 3 Day Select",
-        "Mon., Dec. 21",
-        "Dec. 24"
-       ],
-       [
-        "UPS 2nd Day Air",
-        "Tue., Dec. 22",
+        "UPS air services",
+        "See UPS's holiday schedule",
         "Dec. 24"
        ]
       ],
@@ -3338,10 +3333,6 @@
        [
         "UPS holiday schedule",
         "https://www.ups.com/us/en/support/shipping-support/shipping-services/holiday-shipping-schedule"
-       ],
-       [
-        "ShipStation summary of UPS, USPS, and FedEx 2026 dates (updated Oct. 21, 2026)",
-        "https://www.shipstation.com/blog/us-2026-holiday-shipping-deadlines-for-ups-usps-and-fedex/"
        ]
       ]
      },
@@ -3349,7 +3340,7 @@
       "id": "maker-shipping",
       "h": "How fast does each maker ship?",
       "p": [
-       "Here's what each maker's own shipping page said when we read it on October 26, 2026. None had posted a 2026 holiday cutoff yet, so check the page again before you order."
+       "Here's what each maker's own shipping page said when we read it on October 26, 2026. None had posted a 2026 holiday cutoff we could use, so check the page again before you order. Buck Mason's holiday shipping page shows a standard cutoff of “Wednesday, 12/17”, but December 17 falls on a Thursday in 2026, so we treated that date as last year's."
       ],
       "table": [
        [
@@ -3430,6 +3421,10 @@
         "https://www.buckmason.com/pages/faq"
        ],
        [
+        "Buck Mason holiday shipping",
+        "https://www.buckmason.com/pages/holiday-shipping"
+       ],
+       [
         "Fellow shipping",
         "https://fellowproducts.com/policies/shipping-policy"
        ],
@@ -3475,7 +3470,7 @@
      ]
     ],
     "list_h": "The best last-minute Christmas gifts for him in 2026",
-    "list_intro": "Picks are sorted by how fast each maker says a standard order arrives, using the maker's own shipping page. Faster paid shipping can change the order, so check the estimate at checkout.",
+    "list_intro": "Our top pick comes first, and the rest are roughly grouped from shorter to longer stated shipping times. The makers' times overlap and are only estimates, so check each shipping page and the delivery estimate at checkout.",
     "dim": "Stated delivery time",
     "best_for": {
      "seafarer-beanie-in-natural-donegal-2611": "the guy who needs a warm hat that goes with any coat",
@@ -3489,7 +3484,7 @@
     },
     "table": {
      "seafarer-beanie-in-natural-donegal-2611": [
-      "Ships in up to 2 business days; most arrive within 3 business days",
+      "Ships in up to 2 business days; most arrive within 3 business days (allow 5-10)",
       "On the go",
       "Daily in winter"
      ],
@@ -3569,7 +3564,7 @@
      ],
      [
       "Which of these gifts ships fastest?",
-      "By the makers' own standard timelines, Taylor Stitch is the quickest on this list: up to 2 business days to ship, then most orders arrive within 3 business days. Those are estimates, not guarantees."
+      "By the makers' own standard timelines, Taylor Stitch is the quickest on this list: up to 2 business days to ship, then most orders arrive within 3 business days. It also asks you to allow 5-10 business days, and all of these are estimates, not guarantees."
      ],
      [
       "Will my order arrive by Christmas if I order in mid-December?",
@@ -3592,7 +3587,7 @@
       "Each link goes straight to the maker: Buck Mason, Fellow, Filson, Leatherman, Portland Leather Goods, Stanley 1913, Taylor Stitch, or The James Brand. That merchant handles shipping and returns."
      ]
     ],
-    "cta": "If you're short on time, get the Seafarer Beanie. Taylor Stitch posts the shortest standard shipping time on this list, and a good beanie suits almost any guy."
+    "cta": "If you're short on time, get the Seafarer Beanie. Taylor Stitch posts the shortest typical shipping time on this list (most orders arrive within 3 business days of shipping, though it asks you to allow 5-10), and a good beanie suits almost any guy."
    }
   }
  ]
