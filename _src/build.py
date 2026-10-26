@@ -19,7 +19,7 @@ GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + G
 PRIV_LEDE = "uses Google Analytics only to count visits and clicks." if GA4_ID else "doesn't run analytics."
 PRIV_GA = ('We use Google Analytics 4 to count page views and clicks to merchant sites, so we know which guides are useful. Google Analytics sets first-party cookies and receives standard technical information such as your IP address, browser, and pages visited. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>. You can opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google\'s opt-out browser add-on</a>.') if GA4_ID else "We don't currently run analytics or set cookies of our own."
 e = html.escape
-OCC = [('christmas', 'Christmas'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
+OCC = [('christmas', 'Christmas'), ('holiday-sales', 'Holiday sales'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
 BUD = [('under-30', 'Under $30'), ('under-100', 'Under $100'), ('under-150', 'Under $150'), ('splurge', 'Worth the splurge')]
 GUY = [('husband', 'Husband'), ('boyfriend', 'Boyfriend'), ('dad', 'Dad & father-in-law'), ('coffee', 'Coffee guy'), ('edc', 'Everyday-carry guy'), ('handy', 'Handy guy'), ('bourbon', 'Bourbon guy'), ('outdoors', 'Outdoors guy')]
 GUY_EXTRA = {'husband': ['gifts-for-handy-husband'], 'boyfriend': ['edc-gifts-for-boyfriend'], 'dad': ['coffee-gifts-for-dad']}
@@ -165,8 +165,23 @@ def guide_ld(g, ps):
     return {"@context": "https://schema.org", "@graph": graph}
 
 # "Best X" playbook layout (used when a guide has a "best" block)
+def extra_sections(b):
+    """Optional dated sections (key dates, shipping, deal status). Plain text only; every claim lists its sources.
+    Source links are citations, not merchant links: norewrite keeps Sovrn from turning them into affiliate links."""
+    out = ''
+    for x in b.get('sections', []):
+        out += f'<h2 id="{e(x["id"])}">{e(x["h"])}</h2>' + ''.join(f'<p>{e(t)}</p>' for t in x.get('p', []))
+        if x.get('table'):
+            hd, *rows = x['table']
+            out += ('<div class="tbl"><table><thead><tr>' + ''.join(f'<th>{e(c)}</th>' for c in hd) + '</tr></thead><tbody>'
+                    + ''.join('<tr>' + ''.join(f'<td>{e(c)}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>')
+        if x.get('sources'):
+            out += '<p class="muted small">Sources: ' + ' · '.join(f'<a class="norewrite" href="{e(u)}" rel="nofollow noopener">{e(t)}</a>' for t, u in x['sources']) + '</p>'
+    return out
 def best_body(g):
     b = g['best']; ps = [P[i] for i in b['order']]; top = ps[0]
+    rc = b.get('rechecked')  # optional: date the picks' prices were re-verified
+    trust = TRUST.replace(f'Prices checked {CHECKED}', f'Prices checked {CHECKED}, rechecked {rc}') if rc else TRUST
     crit = ''.join(f'<li><strong>{e(k)}:</strong> {e(v)}</li>' for k, v in b['criteria'])
     items = ''
     for n, p in enumerate(ps, 1):
@@ -193,14 +208,14 @@ def best_body(g):
   <p class="muted small">By the SlateCliff editors · <a href="/about/">How we choose</a> · Published <time datetime="{iso(b.get('published', CHECKED))}">{e(b.get('published', CHECKED))}</time> · Updated <time datetime="{iso(b['updated'])}">{e(b['updated'])}</time></p>
   <p class="lede">{e(b['intro'])}</p>
   <p class="cta1"><span class="eyebrow">Our #1 pick</span><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])}: {money(top['price'])} at {e(top['merchant'])}<span class="sr"> (opens in a new tab)</span></a></p>
-  {TRUST}
+  {trust}
   {strip(ps[:3], lazy=False)}
 </section>
 <article class="prose">
 <h2>Key takeaways</h2><ul>{''.join(f'<li>{e(t)}</li>' for t in b['takeaways'])}</ul>
-<h2>{e(b['whatis_h'])}</h2>{''.join(f'<p>{e(t)}</p>' for t in b['whatis'])}
+<h2>{e(b['whatis_h'])}</h2>{''.join(f'<p>{e(t)}</p>' for t in b['whatis'])}{extra_sections(b)}
 <h2>How we ranked these gifts</h2><p>We ranked each pick on four criteria. We don't publish ratings, review counts, or stats we haven't verified.</p><ul>{crit}</ul>
-<h2>{e(b['list_h'])}</h2><p>{e(b['list_intro'])} Every price is the maker's listed price as of {CHECKED}.</p>
+<h2>{e(b['list_h'])}</h2><p>{e(b['list_intro'])} Every price is the maker's listed price as of {CHECKED}{', rechecked ' + rc if rc else ''}.</p>
 </article>
 <ol class="picks">{items}</ol>
 <article class="prose">
@@ -209,7 +224,7 @@ def best_body(g):
 <h2>{e(b['fit_h'])}</h2>
 <div class="tbl"><table><thead><tr><th>If he…</th><th>Get</th><th>Or</th></tr></thead><tbody>{uc}</tbody></table></div>
 <h2>Frequently asked questions</h2>{faq}
-<h2>Get him the #1 pick</h2><p>{e(b['cta'])} It's {money(top['price'])}. It ships straight from {e(top['merchant'])}. </p><p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])} at {e(top['merchant'])}<span class="sr"> (opens in a new tab)</span></a></p>{TRUST}
+<h2>Get him the #1 pick</h2><p>{e(b['cta'])} It's {money(top['price'])}. It ships straight from {e(top['merchant'])}. </p><p><a class="btn" href="{e(link(top))}" target="_blank" rel="sponsored nofollow noopener">Get the {e(top['name'])} at {e(top['merchant'])}<span class="sr"> (opens in a new tab)</span></a></p>{trust}
 </article>'''
 
 # Guides
@@ -254,7 +269,7 @@ def section(id_, label, opts, key):
         if not gs: continue
         rows += f'<h3 class="subh" id="{key}-{k}">{e(t)}</h3><ul class="list">' + ''.join(f'<li><a href="/guides/{x["slug"]}/">{e(x["title"])}</a></li>' for x in gs) + '</ul>'
     return f'<section class="wrap idx" id="{id_}"><p class="eyebrow">Browse</p><h2>{label}</h2>{rows}</section>'
-body = f'''<section class="ghero"><p class="eyebrow">All guides</p><h1>The guides</h1><p class="lede">Ten short lists, each built around one kind of guy or one occasion. No 100-item roundups.</p></section>
+body = f'''<section class="ghero"><p class="eyebrow">All guides</p><h1>The guides</h1><p class="lede">{len(G)} short lists, each built around one kind of guy or one occasion. No 100-item roundups.</p></section>
 <section class="wrap"><div class="ggrid">{''.join(card(g, k >= 4) for k, g in enumerate(G))}</div></section>
 {section('occasion', 'By occasion', OCC, 'occasion')}{section('budget', 'By budget', BUD, 'budget')}{section('guy', 'By type of guy', GUY, 'guy')}
 {newsletter()}'''
