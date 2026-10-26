@@ -19,6 +19,7 @@ GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + G
 PRIV_LEDE = "uses Google Analytics only to count visits and clicks." if GA4_ID else "doesn't run analytics."
 PRIV_GA = ('We use Google Analytics 4 to count page views and clicks to merchant sites, so we know which guides are useful. Google Analytics sets first-party cookies and receives standard technical information such as your IP address, browser, and pages visited. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>. You can opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google\'s opt-out browser add-on</a>.') if GA4_ID else "We don't currently run analytics or set cookies of our own."
 e = html.escape
+PRIV_UPDATED = 'October 26, 2026'  # bump when the privacy page text changes
 OCC = [('christmas', 'Christmas'), ('holiday-sales', 'Holiday sales'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
 BUD = [('under-30', 'Under $30'), ('under-100', 'Under $100'), ('under-150', 'Under $150'), ('splurge', 'Worth the splurge')]
 GUY = [('husband', 'Husband'), ('boyfriend', 'Boyfriend'), ('dad', 'Dad & father-in-law'), ('coffee', 'Coffee guy'), ('edc', 'Everyday-carry guy'), ('handy', 'Handy guy'), ('bourbon', 'Bourbon guy'), ('outdoors', 'Outdoors guy')]
@@ -342,7 +343,7 @@ simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collec
 <h2>Your choices</h2>
 <p>You can block or clear cookies in your browser settings. To ask about or remove any email address you've sent us, write to <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
 <h2>Changes and contact</h2>
-<p>If this policy changes, we'll update this page. Last updated {CHECKED}. Questions: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
+<p>If this policy changes, we'll update this page. Last updated {PRIV_UPDATED}. Questions: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
 simple('/contact/', 'Contact', 'How to reach SlateCliff: questions about a gift, a broken link, corrections, or partnership inquiries.', 'Contact', '''
 <p class="lede">The best way to reach us is email: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
 <p>Write to us about:</p>
