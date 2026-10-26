@@ -19,6 +19,7 @@ GA4_TAG = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + G
 PRIV_LEDE = "uses Google Analytics only to count visits and clicks." if GA4_ID else "doesn't run analytics."
 PRIV_GA = ('We use Google Analytics 4 to count page views and clicks to merchant sites, so we know which guides are useful. Google Analytics sets first-party cookies and receives standard technical information such as your IP address, browser, and pages visited. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses information from sites that use its services</a>. You can opt out with <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener">Google\'s opt-out browser add-on</a>.') if GA4_ID else "We don't currently run analytics or set cookies of our own."
 e = html.escape
+PRIV_UPDATED = 'October 26, 2026'  # bump when the privacy page text changes
 OCC = [('christmas', 'Christmas'), ('holiday-sales', 'Holiday sales'), ('anniversary', 'Anniversary'), ('birthday', 'Birthday'), ('fathers-day', "Father's Day")]
 BUD = [('under-30', 'Under $30'), ('under-100', 'Under $100'), ('under-150', 'Under $150'), ('splurge', 'Worth the splurge')]
 GUY = [('husband', 'Husband'), ('boyfriend', 'Boyfriend'), ('dad', 'Dad & father-in-law'), ('coffee', 'Coffee guy'), ('edc', 'Everyday-carry guy'), ('handy', 'Handy guy'), ('bourbon', 'Bourbon guy'), ('outdoors', 'Outdoors guy')]
@@ -191,7 +192,7 @@ def best_body(g):
   <div class="pbody">
     <p class="eyebrow">{e(p['merchant'])}</p>
     <h3>{n}. {e(p['name'])}, best for {e(b['best_for'][p['id']])}</h3>
-    <p class="price">{money(p['price'])} <span>as of {CHECKED}; prices may change</span></p>
+    <p class="price">{money(p['price'])} <span>as of {p.get('price_checked', CHECKED)}; prices may change</span></p>
     <p>{e(p['why'])}</p>
     <p><strong>Best suited for:</strong> {e(b['best_for'][p['id']][0].upper() + b['best_for'][p['id']][1:])}. {e(b['dim'])}: {e(b['table'][p['id']][0].lower())}; used {e(b['table'][p['id']][1].lower())}.</p>{note}
     <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
@@ -238,7 +239,7 @@ for g in G:
   <div class="pbody">
     <p class="eyebrow">{n:02d} · {e(p['merchant'])}</p>
     <h2>{e(p['name'])}</h2>
-    <p class="price">{money(p['price'])} <span>as of {CHECKED}; prices may change</span></p>
+    <p class="price">{money(p['price'])} <span>as of {p.get('price_checked', CHECKED)}; prices may change</span></p>
     <p>{e(p['why'])}</p>{note}
     <a class="btn" href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">Buy at {e(p['merchant'])}<span class="sr"> (opens in a new tab)</span></a>
   </div>
@@ -334,7 +335,7 @@ simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collec
 <h2>What we collect</h2>
 <p>The site is static pages hosted on GitHub Pages. GitHub may log standard technical information, such as IP addresses, to operate and secure its service. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. {PRIV_GA}</p>
 <h2>Affiliate tracking</h2>
-<p>Our pages include the Partnerize partner tag and the Sovrn Commerce script, which helps credit purchases you make through our merchant links. We may also use other affiliate networks, such as impact.com, for merchant links. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>, <a href="https://www.sovrn.com/legal/privacy-policy/" rel="noopener">Sovrn's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
+<p>Our pages include the Partnerize partner tag and the Sovrn Commerce script, which helps credit purchases you make through our merchant links. Some merchant links go through the Awin affiliate network, and we may also use other affiliate networks, such as impact.com. These networks and the merchants may set cookies or use similar technologies to credit a purchase. See <a href="https://partnerize.com/privacy-policy" rel="noopener">Partnerize's privacy policy</a>, <a href="https://www.sovrn.com/legal/privacy-policy/" rel="noopener">Sovrn's privacy policy</a>, <a href="https://www.awin.com/us/privacy" rel="noopener">Awin's privacy policy</a> and <a href="https://impact.com/privacy-policy/" rel="noopener">impact.com's privacy policy</a>.</p>
 <h2>Newsletter</h2>
 <p>We don't collect newsletter sign-ups on the site yet. If you email us to join, we use your address only to send the newsletter, and you can ask us to remove it at any time.</p>
 <h2>Merchant links</h2>
@@ -342,7 +343,7 @@ simple('/privacy/', 'Privacy Policy', 'SlateCliff privacy policy: what we collec
 <h2>Your choices</h2>
 <p>You can block or clear cookies in your browser settings. To ask about or remove any email address you've sent us, write to <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
 <h2>Changes and contact</h2>
-<p>If this policy changes, we'll update this page. Last updated {CHECKED}. Questions: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
+<p>If this policy changes, we'll update this page. Last updated {PRIV_UPDATED}. Questions: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>''')
 simple('/contact/', 'Contact', 'How to reach SlateCliff: questions about a gift, a broken link, corrections, or partnership inquiries.', 'Contact', '''
 <p class="lede">The best way to reach us is email: <a href="mailto:hello@slatecliff.com">hello@slatecliff.com</a>.</p>
 <p>Write to us about:</p>
