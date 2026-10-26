@@ -166,7 +166,8 @@ def guide_ld(g, ps):
 
 # "Best X" playbook layout (used when a guide has a "best" block)
 def extra_sections(b):
-    """Optional dated sections (key dates, shipping, deal status). Plain text only; every claim lists its sources."""
+    """Optional dated sections (key dates, shipping, deal status). Plain text only; every claim lists its sources.
+    Source links are citations, not merchant links: norewrite keeps Sovrn from turning them into affiliate links."""
     out = ''
     for x in b.get('sections', []):
         out += f'<h2 id="{e(x["id"])}">{e(x["h"])}</h2>' + ''.join(f'<p>{e(t)}</p>' for t in x.get('p', []))
@@ -175,7 +176,7 @@ def extra_sections(b):
             out += ('<div class="tbl"><table><thead><tr>' + ''.join(f'<th>{e(c)}</th>' for c in hd) + '</tr></thead><tbody>'
                     + ''.join('<tr>' + ''.join(f'<td>{e(c)}</td>' for c in r) + '</tr>' for r in rows) + '</tbody></table></div>')
         if x.get('sources'):
-            out += '<p class="muted small">Sources: ' + ' · '.join(f'<a href="{e(u)}" rel="noopener">{e(t)}</a>' for t, u in x['sources']) + '</p>'
+            out += '<p class="muted small">Sources: ' + ' · '.join(f'<a class="norewrite" href="{e(u)}" rel="nofollow noopener">{e(t)}</a>' for t, u in x['sources']) + '</p>'
     return out
 def best_body(g):
     b = g['best']; ps = [P[i] for i in b['order']]; top = ps[0]
